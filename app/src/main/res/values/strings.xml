@@ -1,3 +1,121 @@
 <resources>
     <string name="app_name">Gesundheitssystem</string>
+
+    <!-- Login -->
+    <string name="login_title">Login</string>
+    <string name="login_cancel">Cancel</string>
+    <string name="login_name_hint">Enter Name</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_attempts">Attempts Left: </string>
+    <string name="login_correct">Login successful</string>
+    <string name="login_fail">Login failed</string>
+
+    <!-- Navigation Drawer -->
+    <string name="snackbar">New bill</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_home">Overview</string>
+    <string name="nav_bill">New bill</string>
+    <string name="nav_list">Bills</string>
+    <string name="nav_camera">Camera</string>
+    <string name="nav_gallery">Gallery</string>
+    <string name="nav_slideshow">Slideshow</string>
+    <string name="nav_pmi">Private Medical Insurance</string>
+    <string name="nav_complaint">Complaint</string>
+    <string name="nav_info">Info</string>
+    <string name="nav_tools">Tools</string>
+    <string name="nav_share">Share</string>
+    <string name="nav_send">Send</string>
+    <string name="nav_sync">Synchronize</string>
+    <string name="nav_cat_communicate">Communicate</string>
+
+    <!-- Menueoptionen -->
+    <string name="action_settings">Settings</string>
+    <string name="action_save">Save</string>
+    <string name="action_help">Help</string>
+
+    <!-- Main fragment -->
+    <string name="tv_overview">Overview:</string>
+    <string name="tv_bill">Bills:</string>
+    <string name="tv_treatment">%1$d treatment: %2$s</string>
+    <string name="tv_treatments">%1$d treatments: %2$s</string>
+    <string name="tv_medications">Medications:</string>
+    <string name="tv_piece">%1$d piece: %2$s</string>
+    <string name="tv_pieces">%1$d pieces: %2$s</string>
+    <string name="tv_medical_treatment">Medical treatment:</string>
+    <string name="tv_difference">Difference:</string>
+    <string name="tv_differenceSum">%1$s</string>
+    <string name="tv_total">Total:</string>
+    <string name="tv_totalSum">%1$s</string>
+    <string name="tv_record">%1$s record</string>
+    <string name="tv_records">%1$s records</string>
+    
+    <!-- PMI fragment -->
+    <string name="tv_insured_name">Name:</string>
+    <string name="tv_insured_number">Insured Number:</string>
+    <string name="tv_insured_mail">Email:</string>
+    <string name="tv_insured_tel">Phone:</string>
+    <string name="tv_insured_Fax">Fax:</string>
+    <string name="tv_insured_contact">Contact Person:</string>
+    
+    <!-- Settings -->
+
+    <string name="txt_settings_cat_login">Login</string>
+    <string name="txt_einstell_cat_server">Server</string>
+    <string name="txt_settings_cat_data">Data</string>
+    <string name="txt_settings_login">Authentication with the server</string>
+    <string name="txt_settings_login_txt">\'Android ID\':\n\'IMEI\':\n\'Google Account\':\n\'Name / Password\':\n</string>
+    <string name="txt_settings_login_default">androidid</string>
+    <string name="txt_settings_security_login">Application security</string>
+    <string name="txt_settings_security_on">Sign up for each start</string>
+    <string name="txt_settings_security_off">Without sign up</string>
+    <string name="txt_settings_ip">IP</string>
+    <string name="txt_settings_port">Port</string>
+    <string name="txt_settings_name">Login-Name</string>
+    <string name="txt_settings_password">Password</string>
+    <string name="txt_settings_allowance">Allowance</string>
+    <string name="txt_settings_allowance_on">additional allowance</string>
+    <string name="txt_settings_allowance_off">no additional allowance</string>
+    <string name="txt_settings_deductible">Deductible in %</string>
+    <string name="txt_settings_ssl">Secure Socket Layer</string>
+    <string name="txt_settings_ssl_on">SSL enabled</string>
+    <string name="txt_settings_ssl_off">SSL disabled</string>
+    <string name="txt_settings_delete">Delete all data?</string>
+    <string name="txt_settings_sum_delete">Deletes the stored content from the app</string>
+
+    <!-- Notification -->
+    <string name="synchronize">Synchronize</string>
+    <string name="synchronize_data">Synchronize data with Server!</string>
+
+    <!-- Disclaimer -->
+    <string name="disclaimer_title">Disclaimer</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+    <string name="disclaimer"><br/>
+<h2>Disclaimer</h2>
+<h3>1. Online content</h3>
+<p> The author accepts no responsibility for the timeliness, accuracy and completeness of the information provided on our website. Liability claims against the author relating to material or immaterial nature caused by the use or disuse of the information or the use of incorrect or incomplete information are excluded, unless the author is not intentional or grossly negligent fault. <br/>
+All offers are non-binding. The author expressly reserves the right to change parts of or the entire offer without prior notice, add to, delete or the publication temporarily or permanently. </p>
+<h3>2. References and links</h3>
+<p> For direct or indirect references to other websites ("hyperlinks") which lie outside the responsibility of the author, would be a liability in the case come into force, in which the author of the contents has knowledge and it is technically possible would and reasonable to prevent the use of illegal content. <br/>
+The author hereby declares that at the time of linking, no illegal content on the pages to be identified. On the current and future design, contents or authorship of the linked / connected pages the author has no influence. He therefore dissociates itself from all contents of all linked / connected pages which were changed after the link. This statement applies to all within its own Internet links and references as well as for foreign entries in guest books, discussion forums, link lists, mailing lists and all other forms of databases to which external access is possible. For illegal, incorrect or incomplete content and particularly for damages arising from the use or disuse of such information lies solely with the provider of the site to which reference was not the one who has linked to these pages. </p>
+<h3>3. Copyright</h3>
+<p> The author strives to respect the copyrights of the images, graphics, audio and video clips and texts, to use his own pictures, graphics, audio and video clips and texts or license-free graphics, audio and video clips and texts. <br/>
+All possibly protected by third parties of Internet brands and trademarks are the provisions of applicable trademark law and the ownership rights of the copyright owner. The mere mention does not draw the conclusion that trademarks are not protected by law! <br/>
+The copyright for published by the author himself remains solely with the author. Any reproduction or use of graphics, audio and video clips and texts in other electronic or printed publications is not permitted without the express permission of the author. </p>
+<h3>4. Notice</h3>
+<p> If the Internet offer the possibility to enter personal or business data (email addresses, names, addresses) is given, the input of these data by the user on a voluntary basis. The use and payment of all services offered - if technically possible and reasonable - without disclosing such data or by providing anonymous data or a pseudonym. The use of published under the imprint or comparable information such as postal addresses, telephone and fax numbers and email addresses for sending unsolicited information is not permitted. Legal action against senders of spam mails in violation of this prohibition are expressly reserved. </p>
+<h3>5. Google Adsense</h3>
+<p> This website uses Google Adsense, a web advertising service of Google Inc., USA ( "Google"). Google Adsense uses. "Cookies" (text files) that are stored on your computer, to help analyze how users use the website. Google Adsense also uses so-called. "Web beacons" (small invisible images) to collect information. The use of Web beacons simple actions such as the visitor traffic on the website can be recorded and collected. The information generated by the cookie and / or Web Beacon about your use of this website (including your IP address) is transmitted to a Google server in the USA and stored there. Google will use this information to evaluate your use of the site in view of the ads, compiling reports on website activity for website operators and providing other with website and internet related services. Google may also transfer this information to third parties, unless required by law or where such third parties process the information on behalf of Google. Google will not associate your IP address with other data held by Google. Storing cookies on your hard drive and the display of Web Beacons you can avoid by choosing "do not accept cookies" in your browser settings (in MS Internet Explorer under "Tools> Internet Options> Privacy> Settings", in Firefox under "Tools> Options> Privacy> cookies"); however, we point out that you may not be able to use all features of this website in this case. By using this site you consent to the processing of data about you by Google in the manner described above and for the purposes set out above. </p>
+<h3>6. Google Analytics</h3>
+<p> This website uses Google Analytics, a web analytics service provided by Google Inc. ( "Google"). Google Analytics uses. "Cookies", text files that are stored on your computer, to help analyze how users use the website. The information generated by the cookie about your use of this website (including your IP address) is transmitted to a Google server in the USA and stored there. Google will use this information to evaluate your use of the website, compiling reports on website activity for website operators and providing other with website and internet related services. Google may also transfer this information to third parties, unless required by law or where such third parties process the information on behalf of Google. Google will not associate your IP address with other data held by Google. You can refuse the use of cookies by changing the settings on your browser; however, we point out that you may not be able to use all features of this website in this case. By using this site you consent to the processing of data about you by Google in the manner described above and for the purposes set out above. </p>
+<h3>7. Facebook</h3>
+<p> This website uses plugins of the provider Facebook.com, which are provided by the company Facebook Inc., 1601 S. California Avenue, Palo Alto, CA 94304 in the United States. Users of our website, where the Facebook plugin is installed are hereby notified that a connection is established to Facebook through the plug, whereby transmission is performed on the browser, so the plugin will appear on the website. <br/>
+Furthermore, be forwarded by the use of data to the Facebook servers, which contain information about your website visits to our website. This has logged Facebook user means that the user data will be assigned to their personal Facebook account. <br/>
+Once you as a logged-in Facebook users actively use Facebook plugin (for example, by clicking on the "Like" button or use the comment function), these data are transferred to your Facebook account and published. You can avoid this only by logging out of your Facebook account. <br/>
+please check the data protection regulations on Facebook.</p> For more information regarding the use of data by Facebook, please refer
+<h3>8. Legal validity of this disclaimer</h3>
+<p> This disclaimer is to be regarded as part of the Internet offer referred to on this page. If sections or individual terms of this statement are not legal, no longer or not completely correct, the remaining parts of the document in their content and validity unaffected. </p>
+    </string>
+
 </resources>
