@@ -50,6 +50,19 @@
     <string name="tv_record">%1$s record</string>
     <string name="tv_records">%1$s records</string>
     
+    <!-- New Bill -->
+    <string name="tv_billnumber">Invoice Number / Document:</string>
+    <string name="tv_amount">Amount:</string>
+    <string name="tv_date">Date:</string>
+    <string name="tv_kind">Type:</string>
+    <string name="tv_hint_billnumber">Number</string>
+    <string name="tv_hint_amount">€</string>
+    <string-array name="treatment_kind">
+        <item>Treatment</item>
+        <item>Medicament</item>
+        <item>Cost estimate</item>
+    </string-array>
+    
     <!-- PMI fragment -->
     <string name="tv_insured_name">Name:</string>
     <string name="tv_insured_number">Insured Number:</string>
@@ -57,11 +70,31 @@
     <string name="tv_insured_tel">Phone:</string>
     <string name="tv_insured_Fax">Fax:</string>
     <string name="tv_insured_contact">Contact Person:</string>
+    <string name="msg_chooseEmail">Choose an Email client</string>
+    <string name="txt_mail_greetings">Dear Sir or Madam,</string>
+    <string name="txt_mail_grettings_name">Dear %1$s</string>
+    <string name="txt_insured_allowance">Allowance:</string>
+    <string name="txt_insured_allowance_on">additional allowance</string>
+    <string name="txt_insured_allowance_off">no additional allowance</string>
+    <string name="txt_insured_deductible">Deductible in %</string>
+
+    <!-- Complaint fragment -->
+    <string-array name="complaint_subject">
+        <item>Complaint</item>
+        <item>Issue</item>
+        <item>Incorrect Invoice</item>
+    </string-array>
+
+    <string-array name="complaint_to">
+        <item>Private Medical Insurance</item>
+        <item>Doctor</item>
+    </string-array>
     
     <!-- Settings -->
-
+    <string name="txt_socket_default_ip">1</string>
+    <string name="txt_socket_default_port">2</string>
     <string name="txt_settings_cat_login">Login</string>
-    <string name="txt_einstell_cat_server">Server</string>
+    <string name="txt_settings_cat_server">Server</string>
     <string name="txt_settings_cat_data">Data</string>
     <string name="txt_settings_login">Authentication with the server</string>
     <string name="txt_settings_login_txt">\'Android ID\':\n\'IMEI\':\n\'Google Account\':\n\'Name / Password\':\n</string>
@@ -73,10 +106,7 @@
     <string name="txt_settings_port">Port</string>
     <string name="txt_settings_name">Login-Name</string>
     <string name="txt_settings_password">Password</string>
-    <string name="txt_settings_allowance">Allowance</string>
-    <string name="txt_settings_allowance_on">additional allowance</string>
-    <string name="txt_settings_allowance_off">no additional allowance</string>
-    <string name="txt_settings_deductible">Deductible in %</string>
+
     <string name="txt_settings_ssl">Secure Socket Layer</string>
     <string name="txt_settings_ssl_on">SSL enabled</string>
     <string name="txt_settings_ssl_off">SSL disabled</string>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin" >
+
+        <TextView
+            android:id="@+id/tv_txt_billnumber"
+            android:text="@string/tv_billnumber"
+            android:textColor="@color/colorPrimaryDark"
+            android:paddingTop="@dimen/half_space"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/et_invoice"
+            android:hint="@string/tv_hint_billnumber"
+            android:inputType="textCapCharacters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_txt_billnumber"
+            android:layout_centerHorizontal="true"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/tv_txt_amount"
+            android:text="@string/tv_amount"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_invoice" />
+
+        <EditText
+            android:id="@+id/et_sum"
+            android:hint="@string/tv_hint_amount"
+            android:inputType="numberDecimal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_txt_amount"
+            android:layout_centerHorizontal="true"
+            android:singleLine="true" />
+
+        <ImageButton
+            android:id="@+id/ib_date"
+            android:src="@android:drawable/ic_menu_today"
+            android:contentDescription="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/et_sum" />
+
+        <TextView
+            android:id="@+id/tv_date_txt"
+            android:text="@string/tv_date"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_sum" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tv_date_txt" />
+
+        <TextView
+            android:id="@+id/tv_kind"
+            android:text="@string/tv_kind"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_date"/>
+
+        <Spinner
+            android:id="@+id/spinner_kind"
+            android:entries="@array/treatment_kind"
+            android:prompt="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tv_kind" >
+        </Spinner>
+
+        <Button
+            android:text="@android:string/ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>

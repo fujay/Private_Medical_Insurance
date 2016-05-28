@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -20,6 +21,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,12 +29,13 @@ import android.view.View;
 import com.nhaarman.supertooltips.ToolTipRelativeLayout;
 import com.nhaarman.supertooltips.ToolTipView;
 
+import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.database.PrivateMedicalInsuranceDatabase;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final int DISCLAIMER_DIALOG = 1;
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String DISCLAIMER_AGREEMENT = "DISCLAIMER";
-    private static final String IMEI = "IMEI";
 
     private Fragment fragment;
     private NavigationView navigationView;
@@ -95,6 +98,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         String id = Build.SERIAL;
+        String androidid = Settings.Secure.ANDROID_ID;
+        String ANDROIDID = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        Log.i(TAG, "ID: " + id);
+        Log.i(TAG, "ANDROIDID: " + ANDROIDID);
         //navigationView = navigationView
         //setContentView(R.layout.nav_header_main);
         //TextView t = (TextView) findViewById(R.id.textViewID);
@@ -153,7 +160,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction.commit();
         } else if (id == R.id.nav_bill) {
             setTitle(R.string.nav_bill);
-            floatingActionButton.show();
+            floatingActionButton.hide();
+            fragment = new NewBillFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_list) {
             setTitle(R.string.nav_list);
             floatingActionButton.show();
@@ -163,6 +174,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_gallery) {
             setTitle(R.string.nav_gallery);
             floatingActionButton.show();
+        } else if (id == R.id.nav_complaint) {
+            setTitle(R.string.nav_complaint);
+            floatingActionButton.hide();
+            fragment = new ComplaintFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_pmi) {
             setTitle(R.string.nav_pmi);
             floatingActionButton.show();

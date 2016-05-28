@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/nav_home"
+            />
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/nav_camera" />
+        <item
+            android:id="@+id/nav_bill"
+            android:icon="@drawable/ic_menu_new_bill"
+            android:title="@string/nav_bill"
+        />
+        <item
+            android:id="@+id/nav_list"
+            android:icon="@drawable/ic_menu_list"
+            android:title="@string/nav_list"
+            />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/nav_gallery" />
+        <item
+            android:id="@+id/nav_pmi"
+            android:icon="@drawable/ic_menu_pmi"
+            android:title="@string/nav_pmi"
+            />
+        <item
+            android:id="@+id/nav_complaint"
+            android:icon="@drawable/ic_menu_complaint"
+            android:title="@string/nav_complaint"
+            />
+        <item
+            android:id="@+id/nav_info"
+            android:icon="@drawable/ic_menu_info"
+            android:title="@string/nav_info" />
+    </group>
+
+    <item android:title="@string/nav_cat_communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/nav_share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/nav_send" />
+            <item
+                android:id="@+id/nav_sync"
+                android:icon="@drawable/ic_menu_sync"
+                android:title="@string/nav_sync"/>
+        </menu>
+    </item>
+
+</menu>

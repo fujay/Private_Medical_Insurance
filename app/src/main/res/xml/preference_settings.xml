@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/txt_settings_cat_login">
+        <ListPreference
+            android:key="login"
+            android:defaultValue="@string/txt_settings_login_default"
+            android:title="@string/txt_settings_login"
+            android:summary="@string/txt_settings_login_txt"
+            android:entries="@array/login"
+            android:entryValues="@array/login_values">
+        </ListPreference>
+        <CheckBoxPreference
+            android:key="security"
+            android:title="@string/txt_settings_security_login"
+            android:summaryOn="@string/txt_settings_security_on"
+            android:summaryOff="@string/txt_settings_security_off"
+            android:defaultValue="false">
+        </CheckBoxPreference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/txt_settings_cat_server">
+        <EditTextPreference
+            android:key="ip"
+            android:title="@string/txt_settings_ip"
+            android:defaultValue="@string/txt_socket_default_ip">
+        </EditTextPreference>
+        <EditTextPreference
+            android:key="port"
+            android:title="@string/txt_settings_port"
+            android:defaultValue="@string/txt_socket_default_port">
+        </EditTextPreference>
+        <EditTextPreference
+            android:key="name"
+            android:title="@string/txt_settings_name"
+            android:defaultValue="pi">
+        </EditTextPreference>
+        <EditTextPreference
+            android:key="password"
+            android:title="@string/txt_settings_password"
+            android:defaultValue="Projekt-Server@noxmiles">
+        </EditTextPreference>
+        <SwitchPreference
+            android:key="ssl"
+            android:title="@string/txt_settings_ssl"
+            android:summaryOn="@string/txt_settings_ssl_on"
+            android:summaryOff="@string/txt_settings_ssl_off"
+            android:defaultValue="true">
+        </SwitchPreference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/txt_settings_cat_data">
+        <CheckBoxPreference
+            android:title="@string/txt_settings_delete"
+            android:icon="@android:drawable/ic_menu_delete"
+            android:summary="@string/txt_settings_sum_delete"
+            android:defaultValue="false">
+        </CheckBoxPreference>
+    </PreferenceCategory>
+
+</PreferenceScreen>

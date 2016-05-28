@@ -1,0 +1,132 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    tools:context="eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.MainFragment" >
+
+    <!-- Fragment Views -->
+
+    <TextView
+        android:id="@+id/tvTreatment"
+        android:text="@string/tv_medical_treatment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_space"/>
+
+    <TextView
+        android:id="@+id/tvTreatmentPos"
+        android:text="@string/tv_treatments"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTreatment"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/tvTreatmentNeg"
+        android:text="@string/tv_treatments"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTreatmentPos"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/tvMedications"
+        android:text="@string/tv_medications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/tvTreatmentNeg" />
+
+    <TextView
+        android:id="@+id/tvMedicationsPos"
+        android:text="@string/tv_pieces"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvMedications"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/tvMedicationsNeg"
+        android:text="@string/tv_pieces"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvMedicationsPos"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:elevation="20dp" android:outlineProvider="bounds"
+        android:id="@+id/tvTotal"
+        android:text="@string/tv_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/tvMedicationsNeg" />
+
+    <TextView
+        android:id="@+id/tvTotalSum"
+        android:text="@string/tv_totalSum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvUnderline1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/tvUnderline1" android:elevation="5dp" android:outlineProvider="bounds"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="@android:color/background_dark"
+        android:layout_below="@+id/tvTotal" />
+
+    <TextView
+        android:id="@+id/tvUnderline2" android:elevation="5dp" android:outlineProvider="bounds"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="@android:color/background_dark"
+        android:layout_marginTop="@dimen/bg_tooltip_padding_top"
+        android:layout_below="@+id/tvUnderline1" />
+
+    <TextView
+        android:elevation="20dp" android:outlineProvider="bounds"
+        android:text="@string/tv_difference"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/tvUnderline2" />
+
+    <TextView
+        android:id="@+id/tv_differenceSum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_differenceSum"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/tvUnderline2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/tv_records"
+        android:text="@string/tv_records"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" />
+
+    <com.nhaarman.supertooltips.ToolTipRelativeLayout
+        android:id="@+id/activity_main_tooltipframelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

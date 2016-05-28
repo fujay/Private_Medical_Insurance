@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin" >
+
+        <ImageButton
+            android:id="@+id/ibAddContact"
+            android:src="@drawable/ic_person_add"
+            android:contentDescription="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_pmi_logo"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:background="@color/colorPrimaryDark"
+            android:padding="2dp"
+            android:id="@+id/iv_pmi_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:contentDescription="@string/nav_pmi"
+            android:layout_marginTop="@dimen/half_space"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_insured_name"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_pmi_logo"
+            android:clickable="true"
+            android:text="@string/tv_insured_name" />
+
+        <TextView
+            android:id="@+id/tv_insured_name_filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_insured_name"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/tv_insured_number"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_insured_name_filled"
+            android:clickable="true"
+            android:text="@string/tv_insured_number" />
+
+        <TextView
+            android:id="@+id/tv_insured_number_filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_insured_number"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/tv_insured_mail"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_insured_number_filled"
+            android:clickable="true"
+            android:text="@string/tv_insured_mail" />
+
+        <TextView
+            android:id="@+id/tv_insured_mail_filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_insured_mail"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:singleLine="true"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            android:id="@+id/tv_insured_tel"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_insured_mail_filled"
+            android:clickable="true"
+            android:text="@string/tv_insured_tel" />
+
+        <TextView
+            android:id="@+id/tv_insured_tel_filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_insured_tel"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:singleLine="true"
+            android:inputType="phone" />
+
+        <TextView
+            android:id="@+id/tv_insured_fax"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_insured_tel_filled"
+            android:clickable="true"
+            android:text="@string/tv_insured_Fax" />
+
+        <TextView
+            android:id="@+id/tv_insured_fax_filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_insured_fax"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/tv_insured_contact"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_insured_fax_filled"
+            android:clickable="true"
+            android:text="@string/tv_insured_contact" />
+
+        <TextView
+            android:id="@+id/tv_insured_contact_filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_insured_contact"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/tv_insured_allowance"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_insured_contact_filled"
+            android:clickable="true"
+            android:text="@string/txt_insured_allowance" />
+
+        <CheckBox
+            android:id="@+id/cb_insured_allowance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tv_insured_allowance" />
+
+        <TextView
+            android:id="@+id/tv_insured_deductible"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cb_insured_allowance"
+            android:text="@string/txt_insured_deductible" />
+
+        <EditText
+            android:id="@+id/et_insured_deductible"
+            android:hint="%"
+            android:inputType="number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cb_insured_allowance"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+</ScrollView>
