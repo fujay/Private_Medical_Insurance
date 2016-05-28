@@ -1,0 +1,13 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <item name="ic_menu_camera" type="drawable">@android:drawable/ic_menu_camera</item>
+    <item name="ic_menu_bill" type="drawable">@drawable/ic_menu_new_bill</item>
+    <item name="ic_menu_list" type="drawable">@drawable/ic_menu_list</item>
+    <item name="ic_menu_complaint" type="drawable">@drawable/ic_menu_gavel</item>
+    <item name="ic_menu_sync" type="drawable">@android:drawable/ic_popup_sync</item>
+    <item name="ic_menu_gallery" type="drawable">@android:drawable/ic_menu_gallery</item>
+    <item name="ic_menu_pmi" type="drawable">@drawable/ic_menu_pmi</item>
+    <item name="ic_menu_info" type="drawable">@android:drawable/ic_dialog_info</item>
+    <item name="ic_menu_manage" type="drawable">@android:drawable/ic_menu_manage</item>
+    <item name="ic_menu_share" type="drawable">@android:drawable/ic_menu_share</item>
+    <item name="ic_menu_send" type="drawable">@android:drawable/ic_menu_send</item>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="sorting">
+        <item>default</item>
+        <item>bill number</item>
+        <item>date</item>
+    </string-array>
+
+    <string-array name="login">
+        <item>Android ID</item>
+        <item>IMEI</item>
+        <item>Google Account</item>
+        <item>Name / Password</item>
+    </string-array>
+
+    <string-array name="login_values">
+        <item>androidid</item>
+        <item>imei</item>
+        <item>google</item>
+        <item>namepw</item>
+    </string-array>
+
+</resources>
