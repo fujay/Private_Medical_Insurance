@@ -282,7 +282,7 @@ public class PMIFragment extends Fragment implements View.OnLongClickListener, V
     }
 
     private void restoreContactPhoto(String id) {
-        if (id != null) /*length() > 1)*/ {
+        if (id != null) {
             try {
                 InputStream inputStream = ContactsContract.Contacts.openContactPhotoInputStream(getContext().getContentResolver(), ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, new Long(id)));
                 if (inputStream != null) {
