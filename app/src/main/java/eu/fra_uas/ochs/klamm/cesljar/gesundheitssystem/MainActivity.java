@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -30,11 +31,13 @@ import com.nhaarman.supertooltips.ToolTipRelativeLayout;
 import com.nhaarman.supertooltips.ToolTipView;
 
 import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.database.PrivateMedicalInsuranceDatabase;
+import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.network.SocketActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    public static final String TAG = MainActivity.class.getSimpleName();
+
     private static final int DISCLAIMER_DIALOG = 1;
-    private static final String TAG = MainActivity.class.getSimpleName();
     private static final String DISCLAIMER_AGREEMENT = "DISCLAIMER";
 
     private Fragment fragment;
@@ -260,6 +263,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void synchronizeData() {
+        startActivity(new Intent(this, SocketActivity.class));
         int dataSets = 50;
         int inkrement = 1;
         ProgressDialog progressDialog = new ProgressDialog(this);

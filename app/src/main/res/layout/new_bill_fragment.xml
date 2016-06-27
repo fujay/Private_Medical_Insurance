@@ -18,7 +18,7 @@
         <EditText
             android:id="@+id/et_invoice"
             android:hint="@string/tv_hint_billnumber"
-            android:inputType="textCapCharacters"
+            android:inputType="textVisiblePassword|textCapCharacters|textNoSuggestions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_txt_billnumber"

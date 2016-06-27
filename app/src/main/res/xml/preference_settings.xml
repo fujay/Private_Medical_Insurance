@@ -7,7 +7,6 @@
             android:key="login"
             android:defaultValue="@string/txt_settings_login_default"
             android:title="@string/txt_settings_login"
-            android:summary="@string/txt_settings_login_txt"
             android:entries="@array/login"
             android:entryValues="@array/login_values">
         </ListPreference>
@@ -54,6 +53,7 @@
     <PreferenceCategory
         android:title="@string/txt_settings_cat_data">
         <CheckBoxPreference
+            android:key="delete"
             android:title="@string/txt_settings_delete"
             android:icon="@android:drawable/ic_menu_delete"
             android:summary="@string/txt_settings_sum_delete"

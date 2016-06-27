@@ -21,8 +21,13 @@ public class InputActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.input_layout);
 
+        String textInfo = null;
         Intent intent = getIntent();
-        final String textInfo = intent.getStringExtra(PMIFragment.TAG);
+        if(intent.getStringExtra(PMIFragment.TAG) != null) {
+            textInfo = intent.getStringExtra(PMIFragment.TAG);
+        } else if(intent.getStringExtra(SettingsActivity.TAG) != null) {
+            textInfo = intent.getStringExtra(SettingsActivity.TAG);
+        }
         setTitle(textInfo);
 
         editTextInput = (EditText) findViewById(R.id.et_input);
@@ -35,6 +40,8 @@ public class InputActivity extends Activity {
             editTextInput.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
         } else if(textInfo.equals(getResources().getString(R.string.tv_insured_name))) {
             editTextInput.setInputType(InputType.TYPE_CLASS_TEXT);
+        } else if(textInfo.equals(getResources().getString(R.string.txt_settings_password))) {
+            editTextInput.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
         }
 
         buttonOK = (Button) findViewById(R.id.bOK);

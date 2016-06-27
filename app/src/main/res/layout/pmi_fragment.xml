@@ -31,7 +31,7 @@
             android:clickable="true"
             android:contentDescription="@string/nav_pmi"
             android:layout_marginTop="@dimen/half_space"
-            android:src="@mipmap/ic_launcher" />
+            />
 
         <TextView
             android:id="@+id/tv_insured_name"

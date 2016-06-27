@@ -97,7 +97,6 @@
     <string name="txt_settings_cat_server">Server</string>
     <string name="txt_settings_cat_data">Data</string>
     <string name="txt_settings_login">Authentication with the server</string>
-    <string name="txt_settings_login_txt">\'Android ID\':\n\'IMEI\':\n\'Google Account\':\n\'Name / Password\':\n</string>
     <string name="txt_settings_login_default">androidid</string>
     <string name="txt_settings_security_login">Application security</string>
     <string name="txt_settings_security_on">Sign up for each start</string>
@@ -105,12 +104,14 @@
     <string name="txt_settings_ip">IP</string>
     <string name="txt_settings_port">Port</string>
     <string name="txt_settings_name">Login-Name</string>
-    <string name="txt_settings_password">Password</string>
+    <string name="txt_settings_password">Password:</string>
 
     <string name="txt_settings_ssl">Secure Socket Layer</string>
     <string name="txt_settings_ssl_on">SSL enabled</string>
     <string name="txt_settings_ssl_off">SSL disabled</string>
-    <string name="txt_settings_delete">Delete all data?</string>
+    <string name="txt_settings_delete">Delete all data</string>
+    <string name="txt_settings_delete_sure">Sure?</string>
+    <string name="txt_settings_delete_cancel">Cancel</string>
     <string name="txt_settings_sum_delete">Deletes the stored content from the app</string>
 
     <!-- Notification -->
