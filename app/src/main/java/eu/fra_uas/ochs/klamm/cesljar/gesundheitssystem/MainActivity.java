@@ -1,6 +1,8 @@
 package eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem;
 
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -8,7 +10,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
@@ -22,10 +23,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.nhaarman.supertooltips.ToolTipRelativeLayout;
 import com.nhaarman.supertooltips.ToolTipView;
@@ -36,6 +40,7 @@ import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.network.SocketActivity;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public static final String TAG = MainActivity.class.getSimpleName();
+    public static final int REQUEST_ID = 2510;
 
     private static final int DISCLAIMER_DIALOG = 1;
     private static final String DISCLAIMER_AGREEMENT = "DISCLAIMER";
@@ -47,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawer;
     private ActionBarDrawerToggle toggle;
     private SharedPreferences settings;
+    private String deviceUniqueID;
 
     private ToolTipView toolTipView = null;
     private ToolTipRelativeLayout toolTipRelativeLayout = null;
@@ -61,10 +67,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         // Initially fragment (frontend)
         if(savedInstanceState == null) {
-        fragment = new MainFragment();
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, fragment);
-        fragmentTransaction.commit();
+            fragment = new MainFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
+            if(PreferenceManager.getDefaultSharedPreferences(this).getBoolean(SettingsActivity.KEY_SECURITY, false)) {
+                Intent intent = new Intent(MainActivity.this, SigninActivity.class);
+                startActivityForResult(intent, REQUEST_ID);
+            }
         }
 
         // ToolTips
@@ -96,19 +106,39 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        if (!settings.getBoolean(DISCLAIMER_AGREEMENT, false)) {
+        if(!settings.getBoolean(DISCLAIMER_AGREEMENT, false)) {
             showDialog(DISCLAIMER_DIALOG);
         }
 
-        String id = Build.SERIAL;
-        String androidid = Settings.Secure.ANDROID_ID;
-        String ANDROIDID = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-        Log.i(TAG, "ID: " + id);
-        Log.i(TAG, "ANDROIDID: " + ANDROIDID);
-        //navigationView = navigationView
-        //setContentView(R.layout.nav_header_main);
-        //TextView t = (TextView) findViewById(R.id.textViewID);
-        //t.setText(id);
+        switch (PreferenceManager.getDefaultSharedPreferences(this).getString(SettingsActivity.KEY_LOGIN, "")) {
+            case "androidid":
+                deviceUniqueID = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+                Log.d("TEST",deviceUniqueID);
+                break;
+            case "imei":
+                TelephonyManager telephonyManager = (TelephonyManager) getBaseContext().getSystemService(TELEPHONY_SERVICE);
+                deviceUniqueID = telephonyManager.getDeviceId();
+                Log.d("TEST",deviceUniqueID);
+                break;
+            case "google":
+                AccountManager manager = (AccountManager) getSystemService(ACCOUNT_SERVICE);
+                Account[] list = manager.getAccounts();
+
+                for(Account account: list)
+                {
+                    if(account.type.equalsIgnoreCase("com.google"))
+                    {
+                        deviceUniqueID = account.name;
+                        break;
+                    }
+                }
+                break;
+            case "namepw":
+                break;
+        }
+        LinearLayout headerViewLayout = (LinearLayout) navigationView.getHeaderView(0);
+        TextView tvUniqueID = (TextView) headerViewLayout.findViewById(R.id.textViewID);
+        tvUniqueID.setText(deviceUniqueID);
     }
 
     @Override
@@ -191,9 +221,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-        } else if (id == R.id.nav_share) {
-            setTitle(R.string.nav_share);
-            floatingActionButton.show();
         } else if (id == R.id.nav_send) {
             setTitle(R.string.nav_send);
             floatingActionButton.show();
@@ -232,6 +259,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void setTitle(CharSequence title) {
         super.setTitle(title);
         //toolbar.setTitle(title);
+    }
+
+    /**
+     *
+     * @param requestCode The request code you passed to startActivityForResult()
+     * @param resultCode A result code specified by the second activity
+     * @param data An Intent that carries the result data
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(resultCode == RESULT_OK) {
+            if(requestCode == REQUEST_ID) {
+                Boolean bool = data.getBooleanExtra(SigninActivity.RETVAL_KEY, true);
+                if(!bool) {
+                    finish();
+                }
+            }
+        } else {
+            finish();
+        }
     }
 
     @Override

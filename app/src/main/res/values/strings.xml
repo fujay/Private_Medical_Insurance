@@ -113,6 +113,7 @@
     <string name="txt_settings_delete_sure">Sure?</string>
     <string name="txt_settings_delete_cancel">Cancel</string>
     <string name="txt_settings_sum_delete">Deletes the stored content from the app</string>
+    <string name="txt_settings_deleted">Deleted!</string>
 
     <!-- Notification -->
     <string name="synchronize">Synchronize</string>
