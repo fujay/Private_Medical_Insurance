@@ -24,7 +24,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,7 +33,6 @@ import android.widget.TextView;
 import com.nhaarman.supertooltips.ToolTipRelativeLayout;
 import com.nhaarman.supertooltips.ToolTipView;
 
-import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.database.PrivateMedicalInsuranceDatabase;
 import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.network.SocketActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -91,7 +89,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .setAction("Action", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-
+                                setTitle(R.string.nav_bill);
+                                floatingActionButton.hide();
+                                fragment = new NewBillFragment();
+                                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                                fragmentTransaction.replace(R.id.fragment_container, fragment);
+                                fragmentTransaction.commit();
                             }
                         }).show();
             }
@@ -113,12 +116,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (PreferenceManager.getDefaultSharedPreferences(this).getString(SettingsActivity.KEY_LOGIN, "")) {
             case "androidid":
                 deviceUniqueID = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-                Log.d("TEST",deviceUniqueID);
                 break;
             case "imei":
                 TelephonyManager telephonyManager = (TelephonyManager) getBaseContext().getSystemService(TELEPHONY_SERVICE);
                 deviceUniqueID = telephonyManager.getDeviceId();
-                Log.d("TEST",deviceUniqueID);
                 break;
             case "google":
                 AccountManager manager = (AccountManager) getSystemService(ACCOUNT_SERVICE);
@@ -200,10 +201,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction.commit();
         } else if (id == R.id.nav_list) {
             setTitle(R.string.nav_list);
-            floatingActionButton.show();
+            floatingActionButton.hide();
+            fragment = new BillList();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_camera) {
             setTitle(R.string.nav_camera);
-            floatingActionButton.show();
+            floatingActionButton.hide();
         } else if (id == R.id.nav_gallery) {
             setTitle(R.string.nav_gallery);
             floatingActionButton.show();
@@ -216,14 +221,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction.commit();
         } else if (id == R.id.nav_pmi) {
             setTitle(R.string.nav_pmi);
-            floatingActionButton.show();
+            floatingActionButton.hide();
             fragment = new PMIFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-        } else if (id == R.id.nav_send) {
-            setTitle(R.string.nav_send);
-            floatingActionButton.show();
         } else if (id == R.id.nav_sync) {
             setTitle(R.string.nav_sync);
             floatingActionButton.show();

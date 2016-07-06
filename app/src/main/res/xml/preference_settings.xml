@@ -31,16 +31,6 @@
             android:title="@string/txt_settings_port"
             android:defaultValue="@string/txt_socket_default_port">
         </EditTextPreference>
-        <EditTextPreference
-            android:key="name"
-            android:title="@string/txt_settings_name"
-            android:defaultValue="pi">
-        </EditTextPreference>
-        <EditTextPreference
-            android:key="password"
-            android:title="@string/txt_settings_password"
-            android:defaultValue="Projekt-Server@noxmiles">
-        </EditTextPreference>
         <SwitchPreference
             android:key="ssl"
             android:title="@string/txt_settings_ssl"
@@ -52,6 +42,12 @@
 
     <PreferenceCategory
         android:title="@string/txt_settings_cat_data">
+        <CheckBoxPreference
+            android:key="summary"
+            android:title="@string/txt_settings_summary"
+            android:summary="@string/txt_settings_summary_on"
+            android:defaultValue="true">
+        </CheckBoxPreference>
         <CheckBoxPreference
             android:key="delete"
             android:title="@string/txt_settings_delete"

@@ -1,49 +1,40 @@
 package eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem;
 
 
-import android.app.ListFragment;
-import android.database.Cursor;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SimpleCursorAdapter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Spinner;
 
-import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.database.BillColumns;
-import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.database.BillTbl;
-import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.database.PrivateMedicalInsuranceDatabase;
+import java.util.Arrays;
+import java.util.List;
+
+import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.database.Bill;
+import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.database.BillDataSource;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BillList extends ListFragment {
-
-    private static final String[] DB_EXAMINED_COLUMNS = new String[] {
-            BillColumns.ID,
-            BillColumns.BILL,
-            BillColumns.AMOUNT,
-            BillColumns.REFUND,
-            BillColumns.KIND,
-            BillColumns.DATE
-    };
-
-    private static final String[] DISPLAY_ROW = new String[] {
-            BillColumns.BILL,
-            BillColumns.AMOUNT,
-            /*BillColumns.REFUND,
-            BillColumns.KIND,
-            BillColumns.DATE*/
-    };
+public class BillList extends Fragment {
 
     private View rootView;
-    private PrivateMedicalInsuranceDatabase PMIDatabase;
+    private BillDataSource dataSource;
+    private ListView listView;
+    private Spinner spinner;
+
 
     /**
      * Required empty public constructor
      */
     public BillList() {
-        PMIDatabase = PrivateMedicalInsuranceDatabase.getInstance(getActivity());
+
     }
 
     /**
@@ -57,24 +48,81 @@ public class BillList extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.bill_list_fragment, container, false);
 
-        //PMIDatabase = PrivateMedicalInsuranceDatabase.getInstance(getActivity());
+        listView = (ListView) rootView.findViewById(R.id.listview);
+        spinner = (Spinner) rootView.findViewById(R.id.s_sorting);
+
+        dataSource = new BillDataSource(getActivity());
+        dataSource.open();
+
+        final List<Bill> values = dataSource.getAllBills();
+
+        final ArrayAdapter<Bill> adapter = new ArrayAdapter<Bill>(getActivity(), android.R.layout.simple_list_item_1, values);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Bill bill = adapter.getItem(position);
+                Intent intent = new Intent(getActivity(), BillDetailActivity.class);
+                intent.putExtra(NewBillFragment.DIALOG_BILL, bill.getId());
+                //intent.putExtra(NewBillFragment.DIALOG_BILL, bill.getBillnumber());
+                //intent.putExtra(NewBillFragment.DIALOG_WHOM, bill.getWhom());
+                //intent.putExtra(NewBillFragment.DIALOG_AMOUNT, bill.getAmount());
+                //intent.putExtra(NewBillFragment.DIALOG_REFUND, bill.getRefund());
+                //intent.putExtra(NewBillFragment.DIALOG_DATE, bill.getDate());
+                //intent.putExtra(NewBillFragment.DIALOG_TYPE, bill.getKind());
+                //intent.putExtra(NewBillFragment.DIALOG_PHOTO1, bill.getPhoto1());
+                //intent.putExtra(NewBillFragment.DIALOG_PHOTO2, bill.getPhoto2());
+                //intent.putExtra(NewBillFragment.DIALOG_PHOTO3, bill.getPhoto3());
+                startActivity(intent);
+            }
+        });
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                Bill bill = adapter.getItem(position);
+                dataSource.deleteBill(bill);
+                adapter.remove(bill);
+                adapter.notifyDataSetChanged();
+                return false;
+            }
+        });
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0: // Default
+                        break;
+                    case 1: // Bill number
+                        break;
+                    case 2: // Date
+                        //Arrays.sort(values.toArray());
+                        //adapter.notifyDataSetChanged();
+                        break;
+                    default: // No existing Spinner value
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         return rootView;
         //return super.onCreateView(inflater, container, savedInstanceState);
     }
 
-    private void showBills() {
-        Cursor bills = PMIDatabase.getReadableDatabase().query(BillTbl.TABLE_NAME, DB_EXAMINED_COLUMNS, null, null, BillColumns.DATE, null, null);
-
-        int[] widgetKey = new int[] {
-                android.R.id.text1,
-                android.R.id.text2
-        };
-
-        SimpleCursorAdapter billAdapter = new SimpleCursorAdapter(this.getActivity(), android.R.layout.simple_list_item_2, bills, DISPLAY_ROW, widgetKey);
-        setListAdapter(billAdapter);
-
-        //startManagingCursor(bills);
+    @Override
+    public void onResume() {
+        dataSource.open();
+        super.onResume();
     }
 
+    @Override
+    public void onPause() {
+        dataSource.close();
+        super.onPause();
+    }
 }

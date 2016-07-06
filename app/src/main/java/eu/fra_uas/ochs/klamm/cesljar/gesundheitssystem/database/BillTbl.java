@@ -17,20 +17,17 @@ public final class BillTbl implements BillColumns {
                     BillColumns.AMOUNT + " REAL, " +
                     BillColumns.REFUND + " REAL, " +
                     BillColumns.KIND + " TEXT, " +
+                    BillColumns.WHOM + " TEXT, " +
                     BillColumns.DATE + " TEXT, " +
-                    BillColumns.TIMESTAMP + " INTEGER " +
+                    BillColumns.PHOTO1 + " BLOB, " +
+                    BillColumns.PHOTO2 + " BLOB, " +
+                    BillColumns.PHOTO3 + " BLOB " +
                     ");";
-
-    /**
-     * Sorted by descending timestamp
-     */
-    public static final String DEFAULT_SORT_ORDER =
-            BillColumns.TIMESTAMP.toUpperCase() + " DESC";
 
     /**
      * Sorted by descending date
      */
-    public static final String DATE_SORT_ORDER =
+    public static final String DEFAULT_SORT_ORDER =
             BillColumns.DATE.toUpperCase() + " DESC";
 
     /**
@@ -50,18 +47,16 @@ public final class BillTbl implements BillColumns {
     /**
      * SQL statement for deleting all bills
      */
-    public static final String STMT_BILL_DELETE =
-            "DELETE " + TABLE_NAME;
+    public static final String STMT_BILL_DELETE = "DELETE " + TABLE_NAME;
 
     /**
-     * SQL statement for deleting a bill by his id
+     * SQL statement for deleting a bill by its id
      */
     public static final String STMT_BILL_DELETE_BY_ID =
-            "DELETE " + TABLE_NAME + " " +
-                    "WHERE " + BillColumns.ID + " = ?";
+            "DELETE " + TABLE_NAME + " WHERE " + BillColumns.ID + " = ?";
 
     public static final String WHERE_ID_EQUALS =
-            BillColumns.ID + "=?";
+            BillColumns.ID + "= ?";
 
     /**
      * List all attributes
@@ -72,8 +67,11 @@ public final class BillTbl implements BillColumns {
             BillColumns.AMOUNT,
             BillColumns.REFUND,
             BillColumns.KIND,
+            BillColumns.WHOM,
             BillColumns.DATE,
-            BillColumns.TIMESTAMP
+            BillColumns.PHOTO1,
+            BillColumns.PHOTO2,
+            BillColumns.PHOTO3
     };
 
     /**

@@ -1,53 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/activity_horizontal_margin">
 
-    <Spinner
-        android:id="@+id/spinner_subject"
-        android:prompt="@string/app_name"
-        android:entries="@array/complaint_subject"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="@dimen/half_space"
-        android:layout_alignParentStart="true">
-    </Spinner>
+        android:layout_marginTop="@dimen/half_space">
 
-    <Spinner
-        android:id="@+id/spinner_to"
-        android:prompt="@string/app_name"
-        android:entries="@array/complaint_subject"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="@dimen/half_space"
-        android:layout_alignParentEnd="true">
-    </Spinner>
+        <Spinner
+            android:id="@+id/spinner_subject"
+            android:entries="@array/complaint_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </Spinner>
+
+        <ImageButton
+            android:id="@+id/ib_contact"
+            android:src="@drawable/ic_person_add"
+            android:contentDescription="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/et_to"
+        android:hint="@string/txt_complaint_to"
+        android:singleLine="true"
+        android:gravity="center"
+        android:background="@drawable/edittext_style_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <ListView
         android:id="@+id/list_invoice"
-        android:layout_below="@id/spinner_subject"
+        android:choiceMode="singleChoice"
+        android:listSelector="@color/colorAccent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="120dp">
     </ListView>
 
     <EditText
         android:id="@+id/et_information"
-        android:layout_below="@id/list_invoice"
+        android:hint="@string/txt_complaint_msg"
+        android:background="@drawable/edittext_style_border"
+        android:layout_weight="1"
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="0dp" />
 
     <Button
         android:id="@+id/b_send_complaint"
         android:text="@string/nav_send"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-</RelativeLayout>
+</LinearLayout>

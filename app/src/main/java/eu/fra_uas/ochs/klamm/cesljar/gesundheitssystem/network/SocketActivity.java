@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import org.json.JSONArray;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,6 +32,7 @@ public class SocketActivity extends Activity {
     private static final String SSL = "ssl";
 
     private SharedPreferences settings;
+    private JSONArray jsonBill;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

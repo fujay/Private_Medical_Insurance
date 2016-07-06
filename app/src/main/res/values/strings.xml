@@ -33,35 +33,50 @@
     <string name="action_settings">Settings</string>
     <string name="action_save">Save</string>
     <string name="action_help">Help</string>
+    <string name="action_add">Add</string>
+    <string name="action_delete">Delete</string>
 
     <!-- Main fragment -->
     <string name="tv_overview">Overview:</string>
     <string name="tv_bill">Bills:</string>
-    <string name="tv_treatment">%1$d treatment: %2$s</string>
-    <string name="tv_treatments">%1$d treatments: %2$s</string>
+    <string name="tv_treatments">%1$d treatments: %2$c %3$.2f €</string>
     <string name="tv_medications">Medications:</string>
-    <string name="tv_piece">%1$d piece: %2$s</string>
-    <string name="tv_pieces">%1$d pieces: %2$s</string>
+    <string name="tv_pieces">%1$d pieces: %2$c %3$.2f €</string>
     <string name="tv_medical_treatment">Medical treatment:</string>
     <string name="tv_difference">Difference:</string>
-    <string name="tv_differenceSum">%1$s</string>
+    <string name="tv_differenceSum">%1$.2f</string>
     <string name="tv_total">Total:</string>
-    <string name="tv_totalSum">%1$s</string>
-    <string name="tv_record">%1$s record</string>
-    <string name="tv_records">%1$s records</string>
-    
+    <string name="tv_totalSum">%1$f</string>
+    <string name="tv_records">%1$d records</string>
+
+    <!-- Bill List -->
+    <string name="tv_no_bill">Currently there a no Bill items maintained</string>
+    <string name="tv_edit_delete">Delete Bill</string>
+    <string name="tv_edit_confirm">Confirm</string>
+
     <!-- New Bill -->
     <string name="tv_billnumber">Invoice Number / Document:</string>
+    <string name="tv_short_billnumber">Invoice:</string>
+    <string name="tv_whom">Whom:</string>
     <string name="tv_amount">Amount:</string>
+    <string name="tv_refund">Refund:</string>
     <string name="tv_date">Date:</string>
     <string name="tv_kind">Type:</string>
     <string name="tv_hint_billnumber">Number</string>
+    <string name="tv_hint_whom">Contact</string>
     <string name="tv_hint_amount">€</string>
+    <string name="tv_bill_created">Bill record created</string>
+    <string name="tv_bill_missing">Missing Bill number!</string>
+    <string name="tv_bill_amount_refund">Refund could not be larger than Amount!</string>
+    <string name="tv_bill_checking">Checking the data:</string>
     <string-array name="treatment_kind">
         <item>Treatment</item>
         <item>Medicament</item>
         <item>Cost estimate</item>
     </string-array>
+
+    <!-- Detail / Change Bill -->
+    <string name="tv_save_changes">Save changes</string>
     
     <!-- PMI fragment -->
     <string name="tv_insured_name">Name:</string>
@@ -79,6 +94,14 @@
     <string name="txt_insured_deductible">Deductible in %</string>
 
     <!-- Complaint fragment -->
+    <string name="txt_complaint_to">To</string>
+    <string name="txt_complaint_msg">Message</string>
+    <string name="txt_wrong_sign">Faulty Character! %1$c</string>
+    <string name="txt_missing_separator">Missing Provider Separator: .</string>
+    <string name="txt_forgotten_provider">Wrong @ character!</string>
+    <string name="txt_wrong_provider">Faulty Provider (.com, .de)</string>
+    <string name="txt_from_date">from</string>
+    <string name="txt_greetings">Best regards</string>
     <string-array name="complaint_subject">
         <item>Complaint</item>
         <item>Issue</item>
@@ -109,6 +132,9 @@
     <string name="txt_settings_ssl">Secure Socket Layer</string>
     <string name="txt_settings_ssl_on">SSL enabled</string>
     <string name="txt_settings_ssl_off">SSL disabled</string>
+    <string name="txt_settings_summary">Show summary before submit</string>
+    <string name="txt_settings_summary_on">Shows summary of bill</string>
+    <string name="txt_settings_summary_off">No summary of Data</string>
     <string name="txt_settings_delete">Delete all data</string>
     <string name="txt_settings_delete_sure">Sure?</string>
     <string name="txt_settings_delete_cancel">Cancel</string>

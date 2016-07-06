@@ -57,4 +57,11 @@ public class InputActivity extends Activity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent resultData = new Intent();
+        resultData.putExtra(RETVAL_KEY, editTextInput.getText().toString());
+        setResult(Activity.RESULT_OK, resultData);
+        super.onBackPressed();
+    }
 }

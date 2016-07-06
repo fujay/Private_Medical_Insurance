@@ -8,5 +8,4 @@
     <item name="ic_menu_pmi" type="drawable">@drawable/ic_menu_pmi</item>
     <item name="ic_menu_info" type="drawable">@android:drawable/ic_dialog_info</item>
     <item name="ic_menu_manage" type="drawable">@android:drawable/ic_menu_manage</item>
-    <item name="ic_menu_send" type="drawable">@android:drawable/ic_menu_send</item>
 </resources>

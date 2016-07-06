@@ -35,14 +35,31 @@ public interface BillColumns {
     String KIND = "kind";
 
     /**
+     * Mandatory field. From whom the service was provided
+     */
+    String WHOM = "whom";
+
+    /**
      * Mandatory field. DATE := Date of creation
      */
     String DATE = "date";
 
     /**
-     * Date of last update
-     * <br>Integer
+     * 1. Photo
+     * <br>BLOB
      */
-    String TIMESTAMP = "timestamp";
+    String PHOTO1 = "firstphoto";
+
+    /**
+     * 2. Photo
+     * <br>BLOB
+     */
+    String PHOTO2 = "secondphoto";
+
+    /**
+     * 3. Photo
+     * <br>BLOB
+     */
+    String PHOTO3 = "thirdphoto";
 
 }

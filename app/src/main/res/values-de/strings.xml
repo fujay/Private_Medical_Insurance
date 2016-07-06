@@ -1,60 +1,174 @@
 <resources>
     <string name="app_name">Gesundheitssystem</string>
-    <string name="title_activity_main">MainActivity</string>
+
+    <!-- Login -->
+    <string name="login_title">Anmelden</string>
+    <string name="login_cancel">Abbrechen</string>
+    <string name="login_name_hint">Name eingeben</string>
+    <string name="login_password_hint">Passwort</string>
+    <string name="login_attempts">Übrige Versuche: </string>
+    <string name="login_correct">Anmeldung erfolgreich</string>
+    <string name="login_fail">Anmeldung fehlgeschlagen</string>
 
     <!-- Navigation Drawer -->
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="snackbar">Neue Rechnung</string>
+    <string name="navigation_drawer_open">Öffne Navigationsleiste</string>
+    <string name="navigation_drawer_close">Schließe Navigationsleiste</string>
+    <string name="nav_home">Übersicht</string>
+    <string name="nav_bill">Neue Rechnung</string>
+    <string name="nav_list">Rechnungen</string>
     <string name="nav_camera">Kamera</string>
-    <string name="nav_gallery">Gallery</string>
-    <string name="nav_slideshow">Slideshow</string>
+    <string name="nav_gallery">Galerie</string>
+    <string name="nav_slideshow">Diashow</string>
+    <string name="nav_pmi">Private Krankenversicherung</string>
+    <string name="nav_complaint">Beschwerde</string>
     <string name="nav_info">Info</string>
-    <string name="nav_tools">Tools</string>
-    <string name="nav_share">Share</string>
-    <string name="nav_send">Send</string>
+    <string name="nav_tools">Einstellungen</string>
+    <string name="nav_share">Teilen</string>
+    <string name="nav_send">Senden</string>
+    <string name="nav_sync">Synchronisieren</string>
+    <string name="nav_cat_communicate">Kommunikation</string>
 
     <!-- Menueoptionen -->
     <string name="action_settings">Einstellungen</string>
+    <string name="action_save">Speichern</string>
     <string name="action_help">Hilfe</string>
+    <string name="action_add">Hinzufügen</string>
+    <string name="action_delete">Löschen</string>
 
     <!-- Main fragment -->
+    <string name="tv_overview">Übersicht:</string>
     <string name="tv_bill">Rechnungen:</string>
+    <string name="tv_treatments">%1$d Behandlungen: %2$c %3$.2f €</string>
+    <string name="tv_medications">Medikamente:</string>
+    <string name="tv_pieces">%1$d Stücke: %2$c %3$.2f €</string>
+    <string name="tv_medical_treatment">Medizinische Behandlung:</string>
+    <string name="tv_difference">Differenz:</string>
+    <string name="tv_differenceSum">%1$.2f</string>
+    <string name="tv_total">Total:</string>
+    <string name="tv_totalSum">%1$.2f</string>
+    <string name="tv_records">%1$d Aufzeichnungen</string>
+
+    <!-- Bill List -->
+    <string name="tv_no_bill">Momentan sind keine Rechnungen vorhanden</string>
+    <string name="tv_edit_delete">Rechnung löschen</string>
+    <string name="tv_edit_confirm">Bestätigen</string>
+
+    <!-- New Bill -->
+    <string name="tv_billnumber">Rechnungsnummer / Dokument:</string>
+    <string name="tv_short_billnumber">Rechnung:</string>
+    <string name="tv_whom">Wem:</string>
+    <string name="tv_amount">Betrag:</string>
+    <string name="tv_refund">Rückerstattung:</string>
+    <string name="tv_date">Datum:</string>
+    <string name="tv_kind">Typ:</string>
+    <string name="tv_hint_billnumber">Nummer</string>
+    <string name="tv_hint_whom">Kontakt</string>
+    <string name="tv_hint_amount">€</string>
+    <string name="tv_bill_created">Rechnung erstellt</string>
+    <string name="tv_bill_missing">Fehlende Rechnungsnummer!</string>
+    <string name="tv_bill_amount_refund">Rückerstattung kann nicht größer als Betrag sein!</string>
+    <string name="tv_bill_checking">Daten überprüfen:</string>
+    <string-array name="treatment_kind">
+        <item>Behandlung</item>
+        <item>Medikamente</item>
+        <item>Kostenvoranschlag</item>
+    </string-array>
+
+    <!-- Detail / Change Bill -->
+    <string name="tv_save_changes">Veränderung speichern</string>
     
-    <!-- Einstellungen -->
-    <string name="txt_settings_general">Allgemein</string>
+    <!-- PMI fragment -->
+    <string name="tv_insured_name">Name:</string>
+    <string name="tv_insured_number">Versicherungsnummer:</string>
+    <string name="tv_insured_mail">Email:</string>
+    <string name="tv_insured_tel">Telefon:</string>
+    <string name="tv_insured_Fax">Fax:</string>
+    <string name="tv_insured_contact">Ansprechpartner:</string>
+    <string name="msg_chooseEmail">Wählen Sie ein Email-Programm</string>
+    <string name="txt_mail_greetings">Sehr geehrte Damen und Herren,</string>
+    <string name="txt_mail_grettings_name">Sehr geehrter %1$s</string>
+    <string name="txt_insured_allowance">Beihilfe:</string>
+    <string name="txt_insured_allowance_on">Zusätzliche Beihilfe</string>
+    <string name="txt_insured_allowance_off">Keine zusätzliche Beihilfe</string>
+    <string name="txt_insured_deductible">Prozentual %</string>
+
+    <!-- Complaint fragment -->
+    <string name="txt_complaint_to">An</string>
+    <string name="txt_complaint_msg">Nachricht</string>
+    <string name="txt_wrong_sign">Fehlerhaftes Zeichen! %1$c</string>
+    <string name="txt_missing_separator">Fehlender Provider Separator: .</string>
+    <string name="txt_forgotten_provider">Fehlendes @ Zeichen!</string>
+    <string name="txt_wrong_provider">Fehlerhafter Provider (.com, .de)</string>
+    <string name="txt_from_date">vom</string>
+    <string name="txt_greetings">Mit freundlichen Grüßen</string>
+    <string-array name="complaint_subject">
+        <item>Beschwerde</item>
+        <item>Problem</item>
+        <item>Falsche Rechnung</item>
+    </string-array>
+    
+    <!-- Settings -->
+    <string name="txt_socket_default_ip">1</string>
+    <string name="txt_socket_default_port">2</string>
+    <string name="txt_settings_cat_login">Login</string>
+    <string name="txt_settings_cat_server">Server</string>
+    <string name="txt_settings_cat_data">Daten</string>
+    <string name="txt_settings_login">Authentifizierung mit dem Server</string>
+    <string name="txt_settings_login_default">androidid</string>
+    <string name="txt_settings_security_login">Anwendungssicherheit</string>
+    <string name="txt_settings_security_on">Melden Sie sich bei jedem Start an</string>
+    <string name="txt_settings_security_off">Ohne Anmeldung</string>
+    <string name="txt_settings_ip">IP</string>
+    <string name="txt_settings_port">Port</string>
+    <string name="txt_settings_name">Login-Name</string>
+    <string name="txt_settings_password">Passwort:</string>
+
+    <string name="txt_settings_ssl">Secure Socket Layer</string>
+    <string name="txt_settings_ssl_on">SSL einschalten</string>
+    <string name="txt_settings_ssl_off">SSL ausschalten</string>
+    <string name="txt_settings_summary">Zeige Zusammenfassung vor der Speicherung</string>
+    <string name="txt_settings_summary_on">Zeige Zusammenfassung der Rechnung</string>
+    <string name="txt_settings_summary_off">Keine Zusammenfassung von Daten</string>
+    <string name="txt_settings_delete">Lösche alle Daten</string>
+    <string name="txt_settings_delete_sure">Sicher?</string>
+    <string name="txt_settings_delete_cancel">Abbrechen</string>
+    <string name="txt_settings_sum_delete">Löschen des gespeicherten Inhalts aus der App</string>
+    <string name="txt_settings_deleted">Gelöscht!</string>
 
     <!-- Notification -->
-    <string name="synchronize">Synchronisiere Daten!</string>
+    <string name="synchronize">Synchronisieren</string>
+    <string name="synchronize_data">Synchronisieren der Daten mit dem Server!</string>
 
     <!-- Disclaimer -->
-    <string name="disclaimer_title">Disclaimer</string>
-    <string name="accept">Accept</string>
-    <string name="decline">Decline</string>
+    <string name="disclaimer_title">Verzichtserklärung</string>
+    <string name="accept">Akzeptieren</string>
+    <string name="decline">Ablehnen</string>
     <string name="disclaimer"><br/>
-<h2>Haftungsausschluss</h2>
-<h3>1. Inhalt des Onlineangebotes</h3>
-<p>Der Autor übernimmt keinerlei Gewähr für die Aktualität, Richtigkeit und Vollständigkeit der bereitgestellten Informationen auf unserer Website. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt.<br />
-Alle Angebote sind freibleibend und unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.</p>
-<h3>2. Verweise und Links</h3>
-<p>Bei direkten oder indirekten Verweisen auf fremde Webseiten (“Hyperlinks”), die außerhalb des Verantwortungsbereiches des Autors liegen, würde eine Haftungsverpflichtung ausschließlich in dem Fall in Kraft treten, in dem der Autor von den Inhalten Kenntnis hat und es ihm technisch möglich und zumutbar wäre, die Nutzung im Falle rechtswidriger Inhalte zu verhindern.<br />
-Der Autor erklärt hiermit ausdrücklich, dass zum Zeitpunkt der Linksetzung keine illegalen Inhalte auf den zu verlinkenden Seiten erkennbar waren. Auf die aktuelle und zukünftige Gestaltung, die Inhalte oder die Urheberschaft der verlinkten/verknüpften Seiten hat der Autor keinerlei Einfluss. Deshalb distanziert er sich hiermit ausdrücklich von allen Inhalten aller verlinkten /verknüpften Seiten, die nach der Linksetzung verändert wurden. Diese Feststellung gilt für alle innerhalb des eigenen Internetangebotes gesetzten Links und Verweise sowie für Fremdeinträge in vom Autor eingerichteten Gästebüchern, Diskussionsforen, Linkverzeichnissen, Mailinglisten und in allen anderen Formen von Datenbanken, auf deren Inhalt externe Schreibzugriffe möglich sind. Für illegale, fehlerhafte oder unvollständige Inhalte und insbesondere für Schäden, die aus der Nutzung oder Nichtnutzung solcherart dargebotener Informationen entstehen, haftet allein der Anbieter der Seite, auf welche verwiesen wurde, nicht derjenige, der über Links auf die jeweilige Veröffentlichung lediglich verweist.</p>
-<h3>3. Urheber- und Kennzeichenrecht</h3>
-<p>Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu beachten, von ihm selbst erstellte Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu nutzen oder auf lizenzfreie Grafiken, Tondokumente, Videosequenzen und Texte zurückzugreifen.<br />
-Alle innerhalb des Internetangebotes genannten und ggf. durch Dritte geschützten Marken- und Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer. Allein aufgrund der bloßen Nennung ist nicht der Schluss zu ziehen, dass Markenzeichen nicht durch Rechte Dritter geschützt sind!<br />
-Das Copyright für veröffentlichte, vom Autor selbst erstellte Objekte bleibt allein beim Autor der Seiten. Eine Vervielfältigung oder Verwendung solcher Grafiken, Tondokumente, Videosequenzen und Texte in anderen elektronischen oder gedruckten Publikationen ist ohne ausdrückliche Zustimmung des Autors nicht gestattet.</p>
-<h3>4. Datenschutz</h3>
-<p>Sofern innerhalb des Internetangebotes die Möglichkeit zur Eingabe persönlicher oder geschäftlicher Daten (Emailadressen, Namen, Anschriften) besteht, so erfolgt die Preisgabe dieser Daten seitens des Nutzers auf ausdrücklich freiwilliger Basis. Die Inanspruchnahme und Bezahlung aller angebotenen Dienste ist – soweit technisch möglich und zumutbar – auch ohne Angabe solcher Daten bzw. unter Angabe anonymisierter Daten oder eines Pseudonyms gestattet. Die Nutzung der im Rahmen des Impressums oder vergleichbarer Angaben veröffentlichten Kontaktdaten wie Postanschriften, Telefon- und Faxnummern sowie Emailadressen durch Dritte zur Übersendung von nicht ausdrücklich angeforderten Informationen ist nicht gestattet. Rechtliche Schritte gegen die Versender von sogenannten Spam-Mails bei Verstössen gegen dieses Verbot sind ausdrücklich vorbehalten.</p>
+<h2>Disclaimer</h2>
+<h3>1. Online content</h3>
+<p> The author accepts no responsibility for the timeliness, accuracy and completeness of the information provided on our website. Liability claims against the author relating to material or immaterial nature caused by the use or disuse of the information or the use of incorrect or incomplete information are excluded, unless the author is not intentional or grossly negligent fault. <br/>
+All offers are non-binding. The author expressly reserves the right to change parts of or the entire offer without prior notice, add to, delete or the publication temporarily or permanently. </p>
+<h3>2. References and links</h3>
+<p> For direct or indirect references to other websites ("hyperlinks") which lie outside the responsibility of the author, would be a liability in the case come into force, in which the author of the contents has knowledge and it is technically possible would and reasonable to prevent the use of illegal content. <br/>
+The author hereby declares that at the time of linking, no illegal content on the pages to be identified. On the current and future design, contents or authorship of the linked / connected pages the author has no influence. He therefore dissociates itself from all contents of all linked / connected pages which were changed after the link. This statement applies to all within its own Internet links and references as well as for foreign entries in guest books, discussion forums, link lists, mailing lists and all other forms of databases to which external access is possible. For illegal, incorrect or incomplete content and particularly for damages arising from the use or disuse of such information lies solely with the provider of the site to which reference was not the one who has linked to these pages. </p>
+<h3>3. Copyright</h3>
+<p> The author strives to respect the copyrights of the images, graphics, audio and video clips and texts, to use his own pictures, graphics, audio and video clips and texts or license-free graphics, audio and video clips and texts. <br/>
+All possibly protected by third parties of Internet brands and trademarks are the provisions of applicable trademark law and the ownership rights of the copyright owner. The mere mention does not draw the conclusion that trademarks are not protected by law! <br/>
+The copyright for published by the author himself remains solely with the author. Any reproduction or use of graphics, audio and video clips and texts in other electronic or printed publications is not permitted without the express permission of the author. </p>
+<h3>4. Notice</h3>
+<p> If the Internet offer the possibility to enter personal or business data (email addresses, names, addresses) is given, the input of these data by the user on a voluntary basis. The use and payment of all services offered - if technically possible and reasonable - without disclosing such data or by providing anonymous data or a pseudonym. The use of published under the imprint or comparable information such as postal addresses, telephone and fax numbers and email addresses for sending unsolicited information is not permitted. Legal action against senders of spam mails in violation of this prohibition are expressly reserved. </p>
 <h3>5. Google Adsense</h3>
-<p>Diese Website benutzt Google Adsense, einen Webanzeigendienst der Google Inc., USA (“Google”). Google Adsense verwendet sog. “Cookies” (Textdateien), die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglicht. Google Adsense verwendet auch sog. “Web Beacons” (kleine unsichtbare Grafiken) zur Sammlung von Informationen. Durch die Verwendung des Web Beacons können einfache Aktionen wie der Besucherverkehr auf der Webseite aufgezeichnet und gesammelt werden. Die durch den Cookie und/oder Web Beacon erzeugten Informationen über Ihre Benutzung diese Website (einschließlich Ihrer IP-Adresse) werden an einen Server von Google in den USA übertragen und dort gespeichert. Google wird diese Informationen benutzen, um Ihre Nutzung der Website im Hinblick auf die Anzeigen auszuwerten, um Reports über die Websiteaktivitäten und Anzeigen für die Websitebetreiber zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen. Auch wird Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich vorgeschrieben oder soweit Dritte diese Daten im Auftrag von Google verarbeiten. Google wird in keinem Fall Ihre IP-Adresse mit anderen Daten der Google in Verbindung bringen. Das Speichern von Cookies auf Ihrer Festplatte und die Anzeige von Web Beacons können Sie verhindern, indem Sie in Ihren Browser-Einstellungen “keine Cookies akzeptieren” wählen (Im MS Internet-Explorer unter “Extras > Internetoptionen > Datenschutz > Einstellung”; im Firefox unter “Extras > Einstellungen > Datenschutz > Cookies”); wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website voll umfänglich nutzen können. Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck einverstanden.</p>
+<p> This website uses Google Adsense, a web advertising service of Google Inc., USA ( "Google"). Google Adsense uses. "Cookies" (text files) that are stored on your computer, to help analyze how users use the website. Google Adsense also uses so-called. "Web beacons" (small invisible images) to collect information. The use of Web beacons simple actions such as the visitor traffic on the website can be recorded and collected. The information generated by the cookie and / or Web Beacon about your use of this website (including your IP address) is transmitted to a Google server in the USA and stored there. Google will use this information to evaluate your use of the site in view of the ads, compiling reports on website activity for website operators and providing other with website and internet related services. Google may also transfer this information to third parties, unless required by law or where such third parties process the information on behalf of Google. Google will not associate your IP address with other data held by Google. Storing cookies on your hard drive and the display of Web Beacons you can avoid by choosing "do not accept cookies" in your browser settings (in MS Internet Explorer under "Tools> Internet Options> Privacy> Settings", in Firefox under "Tools> Options> Privacy> cookies"); however, we point out that you may not be able to use all features of this website in this case. By using this site you consent to the processing of data about you by Google in the manner described above and for the purposes set out above. </p>
 <h3>6. Google Analytics</h3>
-<p>Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. (“Google”). Google Analytics verwendet sog. “Cookies”, Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglicht. Die durch den Cookie erzeugten Informationen über Ihre Benutzung diese Website (einschließlich Ihrer IP-Adresse) wird an einen Server von Google in den USA übertragen und dort gespeichert. Google wird diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten für die Websitebetreiber zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen. Auch wird Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich vorgeschrieben oder soweit Dritte diese Daten im Auftrag von Google verarbeiten. Google wird in keinem Fall Ihre IP-Adresse mit anderen Daten der Google in Verbindung bringen. Sie können die Installation der Cookies durch eine entsprechende Einstellung Ihrer Browser Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website voll umfänglich nutzen können. Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck einverstanden.</p>
+<p> This website uses Google Analytics, a web analytics service provided by Google Inc. ( "Google"). Google Analytics uses. "Cookies", text files that are stored on your computer, to help analyze how users use the website. The information generated by the cookie about your use of this website (including your IP address) is transmitted to a Google server in the USA and stored there. Google will use this information to evaluate your use of the website, compiling reports on website activity for website operators and providing other with website and internet related services. Google may also transfer this information to third parties, unless required by law or where such third parties process the information on behalf of Google. Google will not associate your IP address with other data held by Google. You can refuse the use of cookies by changing the settings on your browser; however, we point out that you may not be able to use all features of this website in this case. By using this site you consent to the processing of data about you by Google in the manner described above and for the purposes set out above. </p>
 <h3>7. Facebook</h3>
-<p>Diese Webseite nutzt Plugins des Anbieters Facebook.com, welche durch das Unternehmen Facebook Inc., 1601 S. California Avenue, Palo Alto, CA 94304 in den USA bereitgestellt werden. Nutzer unserer Webseite, auf der das Facebook-Plugin installiert ist, werden hiermit darauf hingewiesen, dass durch das Plugin eine Verbindung zu Facebook aufgebaut wird, wodurch eine Übermittlung an Ihren Browser durchgeführt wird, damit das Plugin auf der Webseite erscheint.<br />
-Des Weiteren werden durch die Nutzung Daten an die Facebook-Server weitergeleitet, welche Informationen über Ihre Webseitenbesuche auf unserer Homepage enthalten. Dies hat für eingeloggte Facebook-Nutzer zur Folge, dass die Nutzungsdaten ihrem persönlichen Facebook-Account zugeordnet werden.<br />
-Sobald Sie als eingeloggter Facebook-Nutzer aktiv das Facebook-Plugin nutzen (z.B. durch das Klicken auf den „Gefällt mir“ Knopf oder die Nutzung der Kommentarfunktion), werden diese Daten zu Ihrem Facebook-Account übertragen und veröffentlicht. Dies können Sie nur durch vorheriges Ausloggen aus Ihrem Facebook-Account umgehen.<br />
-Weitere Information bezüglich der Datennutzung durch Facebook entnehmen Sie bitte den datenschutzrechtlichen Bestimmungen auf Facebook.</p>
-<h3>8. Rechtswirksamkeit dieses Haftungsausschlusses</h3>
-<p>Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.</p>
+<p> This website uses plugins of the provider Facebook.com, which are provided by the company Facebook Inc., 1601 S. California Avenue, Palo Alto, CA 94304 in the United States. Users of our website, where the Facebook plugin is installed are hereby notified that a connection is established to Facebook through the plug, whereby transmission is performed on the browser, so the plugin will appear on the website. <br/>
+Furthermore, be forwarded by the use of data to the Facebook servers, which contain information about your website visits to our website. This has logged Facebook user means that the user data will be assigned to their personal Facebook account. <br/>
+Once you as a logged-in Facebook users actively use Facebook plugin (for example, by clicking on the "Like" button or use the comment function), these data are transferred to your Facebook account and published. You can avoid this only by logging out of your Facebook account. <br/>
+please check the data protection regulations on Facebook.</p> For more information regarding the use of data by Facebook, please refer
+<h3>8. Legal validity of this disclaimer</h3>
+<p> This disclaimer is to be regarded as part of the Internet offer referred to on this page. If sections or individual terms of this statement are not legal, no longer or not completely correct, the remaining parts of the document in their content and validity unaffected. </p>
     </string>
 
 </resources>

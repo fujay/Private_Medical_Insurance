@@ -18,7 +18,6 @@
 
     <TextView
         android:id="@+id/tvTreatmentPos"
-        android:text="@string/tv_treatments"
         android:textColor="@android:color/holo_green_dark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,7 +27,6 @@
 
     <TextView
         android:id="@+id/tvTreatmentNeg"
-        android:text="@string/tv_treatments"
         android:textColor="@android:color/holo_red_dark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,7 +45,6 @@
 
     <TextView
         android:id="@+id/tvMedicationsPos"
-        android:text="@string/tv_pieces"
         android:textColor="@android:color/holo_green_dark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,7 +54,6 @@
 
     <TextView
         android:id="@+id/tvMedicationsNeg"
-        android:text="@string/tv_pieces"
         android:textColor="@android:color/holo_red_dark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -118,7 +114,6 @@
 
     <TextView
         android:id="@+id/tv_records"
-        android:text="@string/tv_records"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
