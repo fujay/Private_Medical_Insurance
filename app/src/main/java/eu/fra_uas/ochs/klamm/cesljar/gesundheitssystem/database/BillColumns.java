@@ -35,6 +35,11 @@ public interface BillColumns {
     String KIND = "kind";
 
     /**
+     * Mandatory field. From whom the service was provided
+     */
+    String WHOM = "whom";
+
+    /**
      * Mandatory field. DATE := Date of creation
      */
     String DATE = "date";
@@ -43,6 +48,6 @@ public interface BillColumns {
      * Date of last update
      * <br>Integer
      */
-    String TIMESTAMP = "timestamp";
+    //String TIMESTAMP = "timestamp";
 
 }

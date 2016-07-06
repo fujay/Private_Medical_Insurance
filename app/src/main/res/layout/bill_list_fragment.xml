@@ -5,16 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Spinner
-        android:id="@+id/s_Sorting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawSelectorOnTop="true"
-        android:entries="@array/sorting" >
-    </Spinner>
+    <LinearLayout
+        android:paddingTop="@dimen/half_space"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/s_Sorting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawSelectorOnTop="true"
+            android:entries="@array/sorting" >
+        </Spinner>
+
+    </LinearLayout>
 
     <ListView
-        android:id="@+id/android:list"
+        android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </ListView>

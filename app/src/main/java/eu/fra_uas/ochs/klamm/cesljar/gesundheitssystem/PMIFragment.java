@@ -13,6 +13,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -277,10 +278,15 @@ public class PMIFragment extends Fragment implements View.OnLongClickListener, V
                     editor.putString(String.valueOf(REQUEST_ID_IMAGE), contactID);
 
                     editor.commit();
+                    break;
             }
         }
     }
 
+    /**
+     *
+     * @param id
+     */
     private void restoreContactPhoto(String id) {
         if (id != null) {
             try {
@@ -304,6 +310,9 @@ public class PMIFragment extends Fragment implements View.OnLongClickListener, V
         }
     }
 
+    /**
+     *
+     */
     private void retrieveContactPhoto() {
         try {
             InputStream inputStream = ContactsContract.Contacts.openContactPhotoInputStream(getContext().getContentResolver(), ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, new Long(contactID)));
@@ -323,6 +332,9 @@ public class PMIFragment extends Fragment implements View.OnLongClickListener, V
         }
     }
 
+    /**
+     *
+     */
     private void retrieveContactNumber() {
         Cursor cursorID = getContext().getContentResolver().query(uriContact, new String[]{ContactsContract.Contacts._ID}, null, null, null);
 
@@ -342,6 +354,9 @@ public class PMIFragment extends Fragment implements View.OnLongClickListener, V
         cursorPhone.close();
     }
 
+    /**
+     *
+     */
     private void retrieveContactName() {
         // querying contact data store
         Cursor cursor = getContext().getContentResolver().query(uriContact, null, null, null, null);
@@ -354,6 +369,9 @@ public class PMIFragment extends Fragment implements View.OnLongClickListener, V
         cursor.close();
     }
 
+    /**
+     *
+     */
     private void retrieveContactEmail() {
         Cursor cursorEmail = getContext().getContentResolver().query(ContactsContract.CommonDataKinds.Email.CONTENT_URI, null, ContactsContract.CommonDataKinds.Email.CONTACT_ID + " = ?", new String[]{contactID}, null);
         if(cursorEmail.moveToFirst()) {

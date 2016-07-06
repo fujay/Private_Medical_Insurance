@@ -2,48 +2,34 @@ package eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem;
 
 
 import android.app.ListFragment;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
-import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.database.BillColumns;
-import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.database.BillTbl;
-import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.database.PrivateMedicalInsuranceDatabase;
+import java.util.List;
+
+import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.database.Bill;
+import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.database.BillDataSource;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BillList extends ListFragment {
-
-    private static final String[] DB_EXAMINED_COLUMNS = new String[] {
-            BillColumns.ID,
-            BillColumns.BILL,
-            BillColumns.AMOUNT,
-            BillColumns.REFUND,
-            BillColumns.KIND,
-            BillColumns.DATE
-    };
-
-    private static final String[] DISPLAY_ROW = new String[] {
-            BillColumns.BILL,
-            BillColumns.AMOUNT,
-            /*BillColumns.REFUND,
-            BillColumns.KIND,
-            BillColumns.DATE*/
-    };
+public class BillList extends Fragment {
 
     private View rootView;
-    private PrivateMedicalInsuranceDatabase PMIDatabase;
+    private BillDataSource dataSource;
+    private ListView listView;
+
 
     /**
      * Required empty public constructor
      */
     public BillList() {
-        PMIDatabase = PrivateMedicalInsuranceDatabase.getInstance(getActivity());
+
     }
 
     /**
@@ -57,24 +43,29 @@ public class BillList extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.bill_list_fragment, container, false);
 
-        //PMIDatabase = PrivateMedicalInsuranceDatabase.getInstance(getActivity());
+        listView = (ListView) rootView.findViewById(R.id.listview);
+
+        dataSource = new BillDataSource(getActivity());
+        dataSource.open();
+
+        List<Bill> values = dataSource.getAllBills();
+
+        ArrayAdapter<Bill> adapter = new ArrayAdapter<Bill>(getActivity(), android.R.layout.simple_list_item_1, values);
+        listView.setAdapter(adapter);
 
         return rootView;
         //return super.onCreateView(inflater, container, savedInstanceState);
     }
 
-    private void showBills() {
-        Cursor bills = PMIDatabase.getReadableDatabase().query(BillTbl.TABLE_NAME, DB_EXAMINED_COLUMNS, null, null, BillColumns.DATE, null, null);
-
-        int[] widgetKey = new int[] {
-                android.R.id.text1,
-                android.R.id.text2
-        };
-
-        SimpleCursorAdapter billAdapter = new SimpleCursorAdapter(this.getActivity(), android.R.layout.simple_list_item_2, bills, DISPLAY_ROW, widgetKey);
-        setListAdapter(billAdapter);
-
-        //startManagingCursor(bills);
+    @Override
+    public void onResume() {
+        dataSource.open();
+        super.onResume();
     }
 
+    @Override
+    public void onPause() {
+        dataSource.close();
+        super.onPause();
+    }
 }

@@ -77,6 +77,9 @@ public class SigninActivity extends Activity {
         });
     }
 
+    /**
+     * * Overriden backbutton from android. Prevent for exiting the Activity
+     */
     @Override
     public void onBackPressed() {
     }

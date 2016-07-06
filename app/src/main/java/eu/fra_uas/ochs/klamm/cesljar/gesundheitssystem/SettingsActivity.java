@@ -23,6 +23,10 @@ import com.scottyab.aescrypt.AESCrypt;
 
 import java.security.GeneralSecurityException;
 
+import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.database.BillColumns;
+import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.database.BillTbl;
+import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.database.PrivateMedicalInsuranceDatabase;
+
 /**
  * Preferences - Android allows to save and retrieve persistent key-value pairs of primitive data type
  */
@@ -32,6 +36,7 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
     public static final String KEY_LOGIN = "login";
     public static final String KEY_SECURITY_PW = "pw";
     public static final String KEY_SECURITY = "security";
+    public static final String KEY_SUMMARY = "summary";
 
     private static final int DELETE_DIALOG = 1;
     private static final int SAVE_SETTINGS_ID = Menu.FIRST;
@@ -87,6 +92,14 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     @Override
@@ -183,6 +196,13 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
                     editor.commit();
                 }
                 break;
+            case KEY_SUMMARY:
+                if(((CheckBoxPreference) preference).isChecked()) {
+                    preference.setSummary(R.string.txt_settings_summary_on);
+                } else {
+                    preference.setSummary(R.string.txt_settings_summary_off);
+                }
+                break;
             case KEY_DELETE:
                 if(((CheckBoxPreference) preference).isChecked()) {
                     showDialog(DELETE_DIALOG);
@@ -195,6 +215,7 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
     }
 
     private void deleteContent() {
+        deleteDatabase(PrivateMedicalInsuranceDatabase.DATABASE_NAME);
         SharedPreferences.Editor editor = appSettings.edit();
         editor.clear();
         editor.commit();
