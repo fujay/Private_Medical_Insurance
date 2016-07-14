@@ -35,6 +35,9 @@ import com.nhaarman.supertooltips.ToolTipView;
 
 import eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem.network.SocketActivity;
 
+/**
+ * Main Activity which creates the Context and all dependencies for the App
+ */
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public static final String TAG = MainActivity.class.getSimpleName();
