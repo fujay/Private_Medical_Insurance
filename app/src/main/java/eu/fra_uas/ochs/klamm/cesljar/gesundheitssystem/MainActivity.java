@@ -206,9 +206,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-        } else if (id == R.id.nav_camera) {
-            setTitle(R.string.nav_camera);
-            floatingActionButton.hide();
         } else if (id == R.id.nav_gallery) {
             setTitle(R.string.nav_gallery);
             floatingActionButton.show();

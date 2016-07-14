@@ -10,11 +10,21 @@
     <!-- Fragment Views -->
 
     <TextView
+        android:text="@string/periodAll"
+        android:textColor="@android:color/holo_orange_dark"
+        android:id="@+id/tvPeriod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/top_space" />
+
+    <TextView
         android:id="@+id/tvTreatment"
         android:text="@string/tv_medical_treatment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/top_space"/>
+        android:layout_below="@+id/tvPeriod" />
 
     <TextView
         android:id="@+id/tvTreatmentPos"
@@ -62,7 +72,6 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:elevation="20dp" android:outlineProvider="bounds"
         android:id="@+id/tvTotal"
         android:text="@string/tv_total"
         android:layout_width="wrap_content"
@@ -72,7 +81,6 @@
 
     <TextView
         android:id="@+id/tvTotalSum"
-        android:text="@string/tv_totalSum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/tvUnderline1"
@@ -80,14 +88,14 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:id="@+id/tvUnderline1" android:elevation="5dp" android:outlineProvider="bounds"
+        android:id="@+id/tvUnderline1"
         android:layout_width="match_parent"
         android:layout_height="1dip"
         android:background="@android:color/background_dark"
         android:layout_below="@+id/tvTotal" />
 
     <TextView
-        android:id="@+id/tvUnderline2" android:elevation="5dp" android:outlineProvider="bounds"
+        android:id="@+id/tvUnderline2"
         android:layout_width="match_parent"
         android:layout_height="1dip"
         android:background="@android:color/background_dark"
@@ -95,7 +103,6 @@
         android:layout_below="@+id/tvUnderline1" />
 
     <TextView
-        android:elevation="20dp" android:outlineProvider="bounds"
         android:text="@string/tv_difference"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -106,7 +113,6 @@
         android:id="@+id/tv_differenceSum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tv_differenceSum"
         android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:layout_below="@+id/tvUnderline2"
         android:layout_alignParentRight="true"

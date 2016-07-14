@@ -44,7 +44,7 @@
         android:choiceMode="singleChoice"
         android:listSelector="@color/colorAccent"
         android:layout_width="match_parent"
-        android:layout_height="120dp">
+        android:layout_height="@dimen/list_height">
     </ListView>
 
     <EditText

@@ -11,7 +11,7 @@
         android:id="@+id/tv_detail_billnumber_txt"
         android:text="@string/tv_billnumber"
         android:textColor="@color/colorPrimaryDark"
-        android:paddingTop="@dimen/half_space"
+        android:paddingTop="@dimen/activity_horizontal_margin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -21,7 +21,7 @@
         android:inputType="textVisiblePassword|textCapCharacters|textNoSuggestions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_billnumber_txt"
+        android:layout_below="@id/tv_detail_billnumber_txt"
         android:layout_centerHorizontal="true"
         android:singleLine="true" />
 
@@ -31,7 +31,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/et_invoice" />
+        android:layout_below="@id/et_detail_invoice" />
 
     <EditText
         android:id="@+id/et_detail_whom"
@@ -39,7 +39,7 @@
         android:inputType="textCapWords|textAutoComplete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_whom_txt"
+        android:layout_below="@id/tv_detail_whom_txt"
         android:layout_centerHorizontal="true"
         android:singleLine="true" />
 
@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/et_invoice" />
+        android:layout_below="@id/et_detail_invoice" />
 
     <TextView
         android:id="@+id/tv_detail_amount_txt"
@@ -58,7 +58,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/et_whom_txt" />
+        android:layout_below="@id/et_detail_whom" />
 
     <EditText
         android:id="@+id/et_detail_sum"
@@ -66,7 +66,7 @@
         android:inputType="numberDecimal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_amount_txt"
+        android:layout_below="@id/tv_detail_amount_txt"
         android:layout_centerHorizontal="true"
         android:singleLine="true" />
 
@@ -76,7 +76,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/et_sum" />
+        android:layout_below="@id/et_detail_sum" />
 
     <EditText
         android:id="@+id/et_detail_refund"
@@ -84,7 +84,7 @@
         android:inputType="numberDecimal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_refund_txt"
+        android:layout_below="@id/tv_detail_refund_txt"
         android:layout_centerHorizontal="true"
         android:singleLine="true" />
 
@@ -95,7 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/et_refund" />
+        android:layout_below="@id/et_detail_refund" />
 
     <TextView
         android:id="@+id/tv_detail_date_txt"
@@ -103,14 +103,14 @@
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/et_refund" />
+        android:layout_below="@id/et_detail_refund" />
 
     <TextView
         android:id="@+id/tv_detail_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/tv_date_txt" />
+        android:layout_below="@id/tv_detail_date_txt" />
 
     <TextView
         android:id="@+id/tv_detail_kind"
@@ -118,7 +118,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_date"/>
+        android:layout_below="@id/tv_detail_date"/>
 
     <Spinner
         android:id="@+id/spinner_detail_kind"
@@ -127,7 +127,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/tv_kind" >
+        android:layout_below="@+id/tv_detail_kind" >
     </Spinner>
 
     <ImageView
@@ -136,7 +136,7 @@
         android:layout_alignParentLeft="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner_kind" />
+        android:layout_below="@+id/spinner_detail_kind" />
 
     <ImageView
         android:id="@+id/iv_detail_blob2"
@@ -144,7 +144,7 @@
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner_kind" />
+        android:layout_below="@+id/spinner_detail_kind" />
 
     <ImageView
         android:id="@+id/iv_detail_blob3"
@@ -152,7 +152,7 @@
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner_kind" />
+        android:layout_below="@+id/spinner_detail_kind" />
 
     <Button
         android:id="@+id/update_bill"
