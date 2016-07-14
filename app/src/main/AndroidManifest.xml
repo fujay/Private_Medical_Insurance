@@ -34,7 +34,8 @@
         </activity>
 
         <activity
-            android:name=".BillDetailActivity">
+            android:name=".BillDetailActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation">
         </activity>
 
         <activity
@@ -43,7 +44,7 @@
 
         <activity
             android:name=".SettingsActivity">
-            <!-- android:theme="@android:style/Theme.Holo.Light"> -->
+
         </activity>
 
         <activity

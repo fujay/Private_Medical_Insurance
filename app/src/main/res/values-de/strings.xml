@@ -20,7 +20,7 @@
     <string name="nav_camera">Kamera</string>
     <string name="nav_gallery">Galerie</string>
     <string name="nav_slideshow">Diashow</string>
-    <string name="nav_pmi">Private Krankenversicherung</string>
+    <string name="nav_pmi">Private Versicherung</string>
     <string name="nav_complaint">Beschwerde</string>
     <string name="nav_info">Info</string>
     <string name="nav_tools">Einstellungen</string>
@@ -28,6 +28,10 @@
     <string name="nav_send">Senden</string>
     <string name="nav_sync">Synchronisieren</string>
     <string name="nav_cat_communicate">Kommunikation</string>
+    <string name="nav_edit">Bearbeiten</string>
+    <string name="periodAll">Zeige: Alle</string>
+    <string name="periodYear">Zeige: Jahr</string>
+    <string name="periodMonth">Zeige: Monat</string>
 
     <!-- Menueoptionen -->
     <string name="action_settings">Einstellungen</string>
@@ -44,9 +48,9 @@
     <string name="tv_pieces">%1$d Stücke: %2$c %3$.2f €</string>
     <string name="tv_medical_treatment">Medizinische Behandlung:</string>
     <string name="tv_difference">Differenz:</string>
-    <string name="tv_differenceSum">%1$.2f</string>
+    <string name="tv_differenceSum">%1$.2f €</string>
     <string name="tv_total">Total:</string>
-    <string name="tv_totalSum">%1$.2f</string>
+    <string name="tv_totalSum">- %1$.2f € / + %2$.2f €</string>
     <string name="tv_records">%1$d Aufzeichnungen</string>
 
     <!-- Bill List -->
@@ -66,6 +70,7 @@
     <string name="tv_hint_whom">Kontakt</string>
     <string name="tv_hint_amount">€</string>
     <string name="tv_bill_created">Rechnung erstellt</string>
+    <string name="tv_bill_updated">Rechnung aktualisiert</string>
     <string name="tv_bill_missing">Fehlende Rechnungsnummer!</string>
     <string name="tv_bill_amount_refund">Rückerstattung kann nicht größer als Betrag sein!</string>
     <string name="tv_bill_checking">Daten überprüfen:</string>
@@ -145,30 +150,30 @@
     <string name="accept">Akzeptieren</string>
     <string name="decline">Ablehnen</string>
     <string name="disclaimer"><br/>
-<h2>Disclaimer</h2>
-<h3>1. Online content</h3>
-<p> The author accepts no responsibility for the timeliness, accuracy and completeness of the information provided on our website. Liability claims against the author relating to material or immaterial nature caused by the use or disuse of the information or the use of incorrect or incomplete information are excluded, unless the author is not intentional or grossly negligent fault. <br/>
-All offers are non-binding. The author expressly reserves the right to change parts of or the entire offer without prior notice, add to, delete or the publication temporarily or permanently. </p>
-<h3>2. References and links</h3>
-<p> For direct or indirect references to other websites ("hyperlinks") which lie outside the responsibility of the author, would be a liability in the case come into force, in which the author of the contents has knowledge and it is technically possible would and reasonable to prevent the use of illegal content. <br/>
-The author hereby declares that at the time of linking, no illegal content on the pages to be identified. On the current and future design, contents or authorship of the linked / connected pages the author has no influence. He therefore dissociates itself from all contents of all linked / connected pages which were changed after the link. This statement applies to all within its own Internet links and references as well as for foreign entries in guest books, discussion forums, link lists, mailing lists and all other forms of databases to which external access is possible. For illegal, incorrect or incomplete content and particularly for damages arising from the use or disuse of such information lies solely with the provider of the site to which reference was not the one who has linked to these pages. </p>
-<h3>3. Copyright</h3>
-<p> The author strives to respect the copyrights of the images, graphics, audio and video clips and texts, to use his own pictures, graphics, audio and video clips and texts or license-free graphics, audio and video clips and texts. <br/>
-All possibly protected by third parties of Internet brands and trademarks are the provisions of applicable trademark law and the ownership rights of the copyright owner. The mere mention does not draw the conclusion that trademarks are not protected by law! <br/>
-The copyright for published by the author himself remains solely with the author. Any reproduction or use of graphics, audio and video clips and texts in other electronic or printed publications is not permitted without the express permission of the author. </p>
-<h3>4. Notice</h3>
-<p> If the Internet offer the possibility to enter personal or business data (email addresses, names, addresses) is given, the input of these data by the user on a voluntary basis. The use and payment of all services offered - if technically possible and reasonable - without disclosing such data or by providing anonymous data or a pseudonym. The use of published under the imprint or comparable information such as postal addresses, telephone and fax numbers and email addresses for sending unsolicited information is not permitted. Legal action against senders of spam mails in violation of this prohibition are expressly reserved. </p>
-<h3>5. Google Adsense</h3>
-<p> This website uses Google Adsense, a web advertising service of Google Inc., USA ( "Google"). Google Adsense uses. "Cookies" (text files) that are stored on your computer, to help analyze how users use the website. Google Adsense also uses so-called. "Web beacons" (small invisible images) to collect information. The use of Web beacons simple actions such as the visitor traffic on the website can be recorded and collected. The information generated by the cookie and / or Web Beacon about your use of this website (including your IP address) is transmitted to a Google server in the USA and stored there. Google will use this information to evaluate your use of the site in view of the ads, compiling reports on website activity for website operators and providing other with website and internet related services. Google may also transfer this information to third parties, unless required by law or where such third parties process the information on behalf of Google. Google will not associate your IP address with other data held by Google. Storing cookies on your hard drive and the display of Web Beacons you can avoid by choosing "do not accept cookies" in your browser settings (in MS Internet Explorer under "Tools> Internet Options> Privacy> Settings", in Firefox under "Tools> Options> Privacy> cookies"); however, we point out that you may not be able to use all features of this website in this case. By using this site you consent to the processing of data about you by Google in the manner described above and for the purposes set out above. </p>
-<h3>6. Google Analytics</h3>
-<p> This website uses Google Analytics, a web analytics service provided by Google Inc. ( "Google"). Google Analytics uses. "Cookies", text files that are stored on your computer, to help analyze how users use the website. The information generated by the cookie about your use of this website (including your IP address) is transmitted to a Google server in the USA and stored there. Google will use this information to evaluate your use of the website, compiling reports on website activity for website operators and providing other with website and internet related services. Google may also transfer this information to third parties, unless required by law or where such third parties process the information on behalf of Google. Google will not associate your IP address with other data held by Google. You can refuse the use of cookies by changing the settings on your browser; however, we point out that you may not be able to use all features of this website in this case. By using this site you consent to the processing of data about you by Google in the manner described above and for the purposes set out above. </p>
-<h3>7. Facebook</h3>
-<p> This website uses plugins of the provider Facebook.com, which are provided by the company Facebook Inc., 1601 S. California Avenue, Palo Alto, CA 94304 in the United States. Users of our website, where the Facebook plugin is installed are hereby notified that a connection is established to Facebook through the plug, whereby transmission is performed on the browser, so the plugin will appear on the website. <br/>
-Furthermore, be forwarded by the use of data to the Facebook servers, which contain information about your website visits to our website. This has logged Facebook user means that the user data will be assigned to their personal Facebook account. <br/>
-Once you as a logged-in Facebook users actively use Facebook plugin (for example, by clicking on the "Like" button or use the comment function), these data are transferred to your Facebook account and published. You can avoid this only by logging out of your Facebook account. <br/>
-please check the data protection regulations on Facebook.</p> For more information regarding the use of data by Facebook, please refer
-<h3>8. Legal validity of this disclaimer</h3>
-<p> This disclaimer is to be regarded as part of the Internet offer referred to on this page. If sections or individual terms of this statement are not legal, no longer or not completely correct, the remaining parts of the document in their content and validity unaffected. </p>
+<h2>Haftungsausschluss</h2>
+<h3>Online Inhalte </h3>
+    <p> Der Autor übernimmt keinerlei Gewähr für die Aktualität, Richtigkeit und Vollständigkeit der Informationen auf unserer Website zur Verfügung gestellt. Haftungsansprüche gegen den Autor, auf Schäden materieller oder immaterieller Art, durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter oder unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt. <br/>
+        Alle Angebote sind unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile zu ändern oder das gesamte Angebot ohne vorherige Ankündigung zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen. </p>
+    <h3> 2. Verweise und Links </h3>
+    <p> Bei direkten oder indirekten Verweisen auf fremde Webseiten ( "Hyperlinks"), die außerhalb des Verantwortungsbereiches des Autors liegen, würde eine Haftungsverpflichtung in der in Kraft treten Fall sein, in dem der Autor von den Inhalten Kenntnis hat und es ihm technisch möglich und zumutbar wäre, die Nutzung im Falle rechtswidriger Inhalte zu verhindern. <br/>
+        Der Autor erklärt hiermit ausdrücklich, dass keine illegalen Inhalte auf den Seiten zum Zeitpunkt der Verlinkung, identifiziert werden. Auf die aktuelle und zukünftige Gestaltung, die Inhalte oder die Urheberschaft der gelinkten / verknüpften Seiten hat der Autor keinerlei Einfluss. Deshalb distanziert er sich von allen Inhalten aller gelinkten / verknüpften Seiten, die nach der Linksetzung verändert wurden. Diese Erklärung gilt für alle innerhalb des eigenen Internetangebotes gesetzten Links und Verweise sowie für Fremdeinträge in Gäste Bücher, Diskussionsforen, Linkverzeichnissen, Mailinglisten und in allen anderen Formen von Datenbanken, auf deren Inhalt externe Schreibzugriffe möglich sind. Für illegale, fehlerhafte oder unvollständige Inhalte und insbesondere für Schäden, die aus der Nutzung oder Nichtnutzung solcherart dargebotener Informationen entstehen, haftet allein der Anbieter der Seite, auf welche verwiesen wurde, nicht derjenige, der auf diese Seiten verwiesen hat. </p>
+    <h3> 3. Urheberrecht </h3>
+    <p> Der Autor ist bestrebt, die Urheberrechte der verwendeten Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu beachten, von ihm selbst erstellte Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu nutzen oder auf lizenzfreie Grafiken, Tondokumente, Videosequenzen und Texte zu nutzen. <br/>
+        Alle durch Dritte von Internet-Marken und Warenzeichen geschützt möglicherweise sind die Bestimmungen des jeweils gültigen Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer. Die bloße Erwähnung ziehen nicht den Schluss zu, dass Markenzeichen nicht durch Rechte Dritter geschützt sind! <br/>
+        Das Copyright für veröffentlichte, vom Autor selbst erstellte Objekte bleibt allein beim Autor. Eine Vervielfältigung oder Verwendung solcher Grafiken, Tondokumente, Videosequenzen und Texte in anderen elektronischen oder gedruckten Publikationen ist ohne ausdrückliche Zustimmung des Autors nicht gestattet. </p>
+    <h3> 4. Hinweis </h3>
+    <p> Wenn das Internet bieten die Möglichkeit zur Eingabe persönlicher oder geschäftlicher Daten eingeben (Emailadressen, Namen, Anschriften) besteht, so erfolgt die Preisgabe dieser Daten seitens des Nutzers auf ausdrücklich freiwilliger Basis. Die Inanspruchnahme und Bezahlung aller angebotenen Dienste ist - soweit technisch möglich und zumutbar - auch ohne Angabe solcher Daten bzw. unter Angabe anonymisierter Daten oder eines Pseudonyms gestattet. Die Verwendung von im Rahmen der Impressums oder vergleichbarer Angaben veröffentlichten Kontaktdaten wie Postanschriften, Telefon- und Faxnummern sowie E-Mail-Adressen für das Senden von nicht ausdrücklich angeforderten Informationen ist nicht gestattet. Rechtliche Schritte gegen die Versender von sogenannten Spam-Mails bei Verstössen gegen dieses Verbot sind ausdrücklich vorbehalten. </p>
+    <h3> 5. Google Adsense </h3>
+    <p> Diese Website benutzt Google Adsense, einen Web-Service-Werbung von Google Inc., USA ( "Google"). Google Adsense verwendet. "Cookies" (Textdateien), die auf Ihrem Computer gespeichert werden und eine Analyse der Benutzung der Website. Google Adsense verwendet auch sog. "Web Beacons" (kleine unsichtbare Bilder) Informationen zu sammeln. Die Verwendung von Web Beacons können einfache Aktionen wie der Besucherverkehr auf der Webseite aufgezeichnet und gesammelt werden. Die Informationen durch den Cookie erzeugten und / oder Web Beacon über Ihre Benutzung dieser Website (einschließlich Ihrer IP-Adresse) wird an einen Server von Google in den USA übertragen und dort gespeichert. Google wird diese Informationen benutzen, um Ihre Nutzung der Website im Hinblick auf die Anzeigen auszuwerten, um Reports über die Websiteaktivitäten für die Websitebetreiber zusammenzustellen und mit Website und der Internetnutzung verbundene Dienstleistungen, bereitstellt. Auch wird Google diese Informationen an Dritte übertragen, sofern dies gesetzlich vorgeschrieben oder soweit Dritte diese Daten im Auftrag von Google verarbeiten. Google wird in keinem Fall Ihre IP-Adresse mit anderen Daten von Google in. Das Speichern von Cookies auf Ihrer Festplatte und die Anzeige von Web Beacons Sie, indem Sie "keine Cookies akzeptieren" in Ihren Browser-Einstellungen (in MS Internet Explorer unter "Extras> Internetoptionen> Datenschutz> Einstellungen", bei Firefox unter "Extras vermeiden> Einstellungen> Datenschutz> Cookies "); Wir weisen jedoch darauf hin, dass Sie nicht in der Lage ist, alle Funktionen dieser Website in diesem Fall zu verwenden. Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Weise und für die zuvor benannten Zweck einverstanden. </p>
+    <h3> 6. Google Analytics </h3>
+    <p> Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. ( "Google"). Google Analytics verwendet. "Cookies", Textdateien, die auf Ihrem Computer gespeichert werden und eine Analyse der Benutzung der Website. Die Informationen, die durch den Cookie erzeugten Informationen über Ihre Benutzung dieser Website (einschließlich Ihrer IP-Adresse) wird an einen Server von Google in den USA übertragen und dort gespeichert. Google wird diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten für die Websitebetreiber zusammenzustellen und mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen, bereitstellt. Auch wird Google diese Informationen an Dritte übertragen, sofern dies gesetzlich vorgeschrieben oder soweit Dritte diese Daten im Auftrag von Google verarbeiten. Google wird in keinem Fall Ihre IP-Adresse mit anderen Daten von Google in. Sie können die Installation der Cookies durch eine entsprechende Einstellung Ihrer Browser Software verhindern; Wir weisen jedoch darauf hin, dass Sie nicht in der Lage ist, alle Funktionen dieser Website in diesem Fall zu verwenden. Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Weise und für die zuvor benannten Zweck einverstanden. </p>
+    <h3> 7. Facebook </h3>
+    <p> Diese Website benutzt Plugins des Anbieters Facebook.com, die von der Firma Facebook Inc., 1601 S. California Avenue, Palo Alto, CA 94304 in den Vereinigten Staaten zur Verfügung gestellt werden. Die Nutzer unserer Website, wo die Facebook-Plugins installiert wird hiermit darauf hingewiesen, dass eine Verbindung zu Facebook durch den Stecker hergestellt wird, wobei die Übertragung auf dem Browser ausgeführt wird, so dass das Plugin auf der Website erscheinen. <br/>
+        Darüber hinaus kann durch die Verwendung von Daten zu den Facebook-Server übermittelt, die Informationen über Ihre Website Besuche auf unserer Website enthalten. Dies wurde protokolliert Facebook-Nutzer bedeutet, dass die Benutzerdaten auf ihre persönlichen Facebook-Account zugeordnet werden. <br/>
+        Sobald Sie als eingeloggter Facebook-Benutzer aktiv Facebook-Plugins verwenden (zum Beispiel durch den "Gefällt mir" Button betätigen oder die Kommentarfunktion verwenden) werden diese Daten auf Ihrem Facebook-Account übertragen und veröffentlicht. Sie können dies nur, indem Sie sich aus Ihrem Facebook-Konto zu vermeiden. <br/>
+        bitte die Datenschutzbestimmungen auf Facebook überprüfen. </p> Weitere Informationen über die Verwendung von Daten durch Facebook, lesen Sie bitte
+    <h3> 8. Rechtswirksamkeit dieses Haftungsausschlusses </h3>
+    <p> Dieser Haftungsausschluss ist als Teil des Internetangebotes aus auf diese Seite verwiesen angesehen werden. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt. </p>
     </string>
 
 </resources>

@@ -28,6 +28,10 @@
     <string name="nav_send">Send</string>
     <string name="nav_sync">Synchronize</string>
     <string name="nav_cat_communicate">Communicate</string>
+    <string name="nav_edit">Edit</string>
+    <string name="periodAll">Show: All</string>
+    <string name="periodYear">Show: Year</string>
+    <string name="periodMonth">Show: Month</string>
 
     <!-- Menueoptionen -->
     <string name="action_settings">Settings</string>
@@ -44,9 +48,9 @@
     <string name="tv_pieces">%1$d pieces: %2$c %3$.2f €</string>
     <string name="tv_medical_treatment">Medical treatment:</string>
     <string name="tv_difference">Difference:</string>
-    <string name="tv_differenceSum">%1$.2f</string>
+    <string name="tv_differenceSum">%1$.2f €</string>
     <string name="tv_total">Total:</string>
-    <string name="tv_totalSum">%1$f</string>
+    <string name="tv_totalSum">- %1$.2f € / + %2$.2f €</string>
     <string name="tv_records">%1$d records</string>
 
     <!-- Bill List -->
@@ -66,6 +70,7 @@
     <string name="tv_hint_whom">Contact</string>
     <string name="tv_hint_amount">€</string>
     <string name="tv_bill_created">Bill record created</string>
+    <string name="tv_bill_updated">Bill record updated</string>
     <string name="tv_bill_missing">Missing Bill number!</string>
     <string name="tv_bill_amount_refund">Refund could not be larger than Amount!</string>
     <string name="tv_bill_checking">Checking the data:</string>

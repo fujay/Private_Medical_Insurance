@@ -1,9 +1,9 @@
 package eu.fra_uas.ochs.klamm.cesljar.gesundheitssystem;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,8 +24,11 @@ public class MainFragment extends Fragment {
     private ToolTipView toolTipView = null;
     private ToolTipRelativeLayout toolTipRelativeLayout = null;
     private View rootView = null;
-    private TextView tvTreatmentPos, tvTreatmentNeg, tvMedicationsPos, tvMedicationsNeg, tvTotal, tvDifference, tvRecords;
+    private TextView tvPeriod, tvTreatmentPos, tvTreatmentNeg, tvMedicationsPos, tvMedicationsNeg, tvTotal, tvDifference, tvRecords;
     private BillDataSource dataSource;
+    private double treatmentNeg, treatmentPos;
+    private double medicationNeg, mediactionPos;
+    private double difference;
 
     /**
      * Required empty public constructor
@@ -40,20 +43,51 @@ public class MainFragment extends Fragment {
         dataSource = new BillDataSource(getActivity());
         dataSource.read();
 
+        tvPeriod = (TextView) rootView.findViewById(R.id.tvPeriod);
+        tvPeriod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (tvPeriod.getText().toString().equals(getResources().getString(R.string.periodAll))) {
+                    tvPeriod.setText(getResources().getString(R.string.periodMonth));
+                } else if (tvPeriod.getText().toString().equals(getResources().getString(R.string.periodMonth))) {
+                    tvPeriod.setText(getResources().getString(R.string.periodYear));
+                } else {
+                    tvPeriod.setText(getResources().getString(R.string.periodAll));
+                }
+            }
+        });
+
+        treatmentNeg = dataSource.getTreatmentNegative();
+        treatmentPos = dataSource.getTreatmentPositive();
+        mediactionPos = dataSource.getMedicationPositive();
+        medicationNeg = dataSource.getMedicationNegative();
+        difference =  (treatmentPos + mediactionPos) - (treatmentNeg + medicationNeg);
+
         tvTreatmentPos = (TextView) rootView.findViewById(R.id.tvTreatmentPos);
         tvTreatmentNeg = (TextView) rootView.findViewById(R.id.tvTreatmentNeg);
 
         tvMedicationsPos = (TextView) rootView.findViewById(R.id.tvMedicationsPos);
         tvMedicationsNeg = (TextView) rootView.findViewById(R.id.tvMedicationsNeg);
+
+        tvTotal = (TextView) rootView.findViewById(R.id.tvTotalSum);
+        tvDifference = (TextView) rootView.findViewById(R.id.tv_differenceSum);
         tvRecords = (TextView) rootView.findViewById(R.id.tv_records);
 
         tvRecords.setText(getResources().getString(R.string.tv_records, dataSource.getSize()));
 
-        tvTreatmentPos.setText(getString(R.string.tv_treatments, dataSource.getTreatmentPosSize(), '+', dataSource.getTreatmentPositive()));
-        tvTreatmentNeg.setText(getString(R.string.tv_treatments, dataSource.getTreatmentNegSize(), '-', dataSource.getTreatmentNegative()));
+        tvTreatmentPos.setText(getString(R.string.tv_treatments, dataSource.getTreatmentPosSize(), '+', treatmentPos));
+        tvTreatmentNeg.setText(getString(R.string.tv_treatments, dataSource.getTreatmentNegSize(), '-', treatmentNeg));
 
-        tvMedicationsPos.setText(getString(R.string.tv_pieces, dataSource.getMedicationPosSize(), '+', dataSource.getMedicationPositive()));
-        tvMedicationsNeg.setText(getString(R.string.tv_pieces, dataSource.getMedicationNegSize(), '-', dataSource.getMedicationNegative()));
+        tvMedicationsPos.setText(getString(R.string.tv_pieces, dataSource.getMedicationPosSize(), '+', mediactionPos));
+        tvMedicationsNeg.setText(getString(R.string.tv_pieces, dataSource.getMedicationNegSize(), '-', medicationNeg));
+
+        tvTotal.setText(getString(R.string.tv_totalSum, (treatmentNeg + medicationNeg), (treatmentPos + mediactionPos)));
+        if(difference < 0) {
+            tvDifference.setTextColor(Color.RED);
+        } else {
+            tvDifference.setTextColor(Color.GREEN);
+        }
+        tvDifference.setText(getString(R.string.tv_differenceSum, difference));
 
 
         toolTipRelativeLayout = (ToolTipRelativeLayout) rootView.findViewById(R.id.activity_main_tooltipframelayout);
